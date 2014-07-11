@@ -1,0 +1,7 @@
+<h1>
+  Редактирование новости
+  <small class="nowrap"><%= @new.name %></small>
+</h1>
+
+<%= render partial: 'form',
+           locals: { url: neW_path(@new) } %>

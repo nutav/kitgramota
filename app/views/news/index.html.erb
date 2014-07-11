@@ -1,0 +1,22 @@
+<h1>Новости</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Новость</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @news.each do |n| %>
+  		<tr style="background-color: <%= '#BFFFD4' if n.publication? %>">
+  			<td><%= n.id %></td>
+  			<td>
+  				<h3><%= n.name %></h3>
+  				<div><%= raw n.description %></div>
+  			</td>
+  		</tr>
+  	<% end %>
+  </tbody>
+</table>
