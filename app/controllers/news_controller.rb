@@ -10,7 +10,7 @@ class NewsController < ApplicationController
 	end
 
 	def create
-		@new = New.find(params[:id])
+		@new = New.create(resource_params)
 	end
 
 	def edit
@@ -18,7 +18,7 @@ class NewsController < ApplicationController
 	end
 
 	def update 
-		@new = New.find(params[:id])
+		@new = New.update(resource_params)
 	end
 
 	def destroy 

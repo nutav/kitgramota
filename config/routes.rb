@@ -8,6 +8,17 @@ Rails.application.routes.draw do
   get 'contacts', to: 'welcome#contacts'
 
   resources :news
+  resources :prices
+
+  resources :albums do
+    resources :photos
+  end
+
+
+  namespace :education do
+    resources :levels
+    resources :types
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

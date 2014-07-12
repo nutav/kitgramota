@@ -1,0 +1,7 @@
+<h1>
+    Редактирование альбома
+    <small class="nowrap"><%= @album.name %></small>
+</h1>
+
+<%= render partial: 'form',
+           locals: { url: album_path(@album) } %>

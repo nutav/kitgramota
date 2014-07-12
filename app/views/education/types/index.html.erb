@@ -1,0 +1,22 @@
+<h1>Типы курсов</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Название</th>
+        <th>Количество академических часов</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @types.each do |type| %>
+      <tr style="background-color: <%= '#BFFFD4' if n.publication? %>">
+          <td><%= type.id %></td>
+          <td><%= type.name %></td>
+          <td><%= type.hours %></td>
+          <td><%= link_to 'Редактировать', edit_education_type_path(type) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

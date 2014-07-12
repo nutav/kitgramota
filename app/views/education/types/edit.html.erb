@@ -1,0 +1,7 @@
+<h1>
+    Редактирование информации о типе курса
+    <small class="nowrap"><%= @type.name %></small>
+</h1>
+
+<%= render partial: 'form',
+           locals: { url: education_type_path(@type) } %>

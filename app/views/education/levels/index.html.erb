@@ -1,0 +1,23 @@
+<h1>Курсы</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Курс</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @levels.each do |level| %>
+      <tr style="background-color: <%= '#BFFFD4' if n.publication? %>">
+          <td><%= level.id %></td>
+          <td>
+              <h3><%= level.name %></h3>
+              <div><%= raw level.description %></div>
+          </td>
+          <td><%= link_to 'Редактировать', edit_education_level_path(level) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

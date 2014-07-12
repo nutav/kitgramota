@@ -1,0 +1,7 @@
+<h1>
+    Редактирование информации о курсе
+    <small class="nowrap"><%= @level.name %></small>
+</h1>
+
+<%= render partial: 'form',
+           locals: { url: education_level_path(@level) } %>

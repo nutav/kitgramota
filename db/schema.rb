@@ -11,7 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707172214) do
+ActiveRecord::Schema.define(version: 20140712083634) do
+
+  create_table "albums", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "course_prices", force: true do |t|
+    t.integer  "sum",                                null: false
+    t.boolean  "saturday",           default: false
+    t.boolean  "individual",         default: false
+    t.integer  "education_level_id"
+    t.integer  "education_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "education_level_claims", force: true do |t|
+    t.string   "name",                           null: false
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "status",             default: 1
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "education_level_id"
+  end
+
+  add_index "education_level_claims", ["education_level_id"], name: "index_education_level_claims_on_education_level_id", using: :btree
+
+  create_table "education_levels", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "education_types", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "hours"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "news", force: true do |t|
     t.string   "name",                    null: false
@@ -19,6 +63,17 @@ ActiveRecord::Schema.define(version: 20140707172214) do
     t.integer  "status",      default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "name",                 null: false
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end
