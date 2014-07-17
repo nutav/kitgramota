@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require foundation
+//= require jquery_nested_form
 $(document).foundation();
 $('.rich-text-redacor').redactor();

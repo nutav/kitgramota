@@ -1,0 +1,8 @@
+<h1>Галерея</h1>
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <% @albums.each do |album| %>	
+  <li>
+  	<h3><%= album.name %></h3>
+  </li>
+  <% end %>
+</ul>

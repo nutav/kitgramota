@@ -1,0 +1,8 @@
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">	
+  <% @photos.each do |photo| %>
+    <li>
+  	  <%= image_tag photo.picture.url(:medium) %>
+  	  <p><%= photo.name %></p>
+    </li>
+  <% end %>
+</ul>  
