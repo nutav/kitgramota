@@ -1,8 +1,11 @@
 <h1>Галерея</h1>
 <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-  <% @albums.each do |album| %>	
+  <% @albums.with_photos.each do |album| %>	
   <li>
-  	<h3><%= album.name %></h3>
+  	<%= link_to album_photos_path(album) do %>
+  		<%= image_tag album.photos.first.picture.url(:medium) %>
+  		<h3><%= album.name %></h3>
+  	<% end %>	
   </li>
   <% end %>
 </ul>

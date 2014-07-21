@@ -5,4 +5,5 @@
   	  <p><%= photo.name %></p>
     </li>
   <% end %>
+  <%= render partial: 'gallery/gallery', locals: { photos: @photos} %>
 </ul>  

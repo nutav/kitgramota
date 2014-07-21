@@ -37,6 +37,9 @@ gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'nested_form'
 gem 'russian'
 gem 'stringex'
+gem 'devise'
+gem 'binding_of_caller'
+gem 'rails-gallery'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
