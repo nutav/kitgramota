@@ -1,20 +1,20 @@
 class NewsController < ApplicationController
-	# load_and_authorize_resource class: 'New'
+	load_resource class: 'New'
 
 	def index
-		@news = New.all
 	end
 	
 	def new 
-		@new = New.new
 	end
+
+	def show
+	end	
 
 	def create
 		@new = New.create(resource_params)
 	end
 
 	def edit
-		@new = New.find(params[:id])
 	end
 
 	def update 

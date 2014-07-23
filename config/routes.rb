@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'contacts', to: 'welcome#contacts'
+  get 'myths', to: 'welcome#myths'
+  get 'why_chinese', to: 'welcome#why_chinese'
 
   resources :news
   resources :prices
+  resources :teachers
 
   resources :albums do
     resources :photos

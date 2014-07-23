@@ -1,9 +1,47 @@
-<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">	
-  <% @photos.each do |photo| %>
-    <li>
-  	  <%= image_tag photo.picture.url(:medium) %>
-  	  <p><%= photo.name %></p>
-    </li>
-  <% end %>
-  <%= render partial: 'gallery/gallery', locals: { photos: @photos} %>
-</ul>  
+<noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+			</style>
+		</noscript>
+		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+			<div class="rg-image-wrapper">
+				{{if itemsCount > 1}}
+					<div class="rg-image-nav">
+						<a href="#" class="rg-image-nav-prev">Previous Image</a>
+						<a href="#" class="rg-image-nav-next">Next Image</a>
+					</div>
+				{{/if}}
+				<div class="rg-image"></div>
+				<div class="rg-loading"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</script>
+
+<h1><%= @album.name %></h1>
+<div id="rg-gallery" class="rg-gallery">
+	<div class="rg-thumbs">
+		<div class="es-carousel-wrapper">
+			<div class="es-nav">
+				<span class="es-nav-prev">Previous</span>
+				<span class="es-nav-next">Next</span>
+			</div>
+			<div class="es-carousel">
+				<ul>
+					<% @photos.each do |photo| %>
+					    <li>
+					  	  <a href="#">
+					  	  	<%= image_tag photo.picture.url(:medium),
+					  	  	data: {large: photo.picture.url,
+					  	  	description: photo.name}, alt: photo.name %>
+					  	  </a>
+					    </li>
+					  <% end %>
+				</ul>	  
+			</div>
+		</div>		 

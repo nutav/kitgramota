@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721140711) do
+ActiveRecord::Schema.define(version: 20140723115128) do
 
   create_table "admins", force: true do |t|
     t.string   "login",                               null: false
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20140721140711) do
   create_table "albums", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", force: true do |t|
+    t.string   "name",                   null: false
+    t.text     "text"
+    t.integer  "status",     default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,6 +99,24 @@ ActiveRecord::Schema.define(version: 20140721140711) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "teachers", force: true do |t|
+    t.string   "last_name",           null: false
+    t.string   "first_name",          null: false
+    t.string   "patronym"
+    t.text     "extra"
+    t.text     "education"
+    t.text     "probation"
+    t.text     "speciality"
+    t.integer  "years"
+    t.text     "about"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

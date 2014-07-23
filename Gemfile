@@ -38,8 +38,9 @@ gem 'nested_form'
 gem 'russian'
 gem 'stringex'
 gem 'devise'
+gem 'cancan'
 gem 'binding_of_caller'
-gem 'rails-gallery'
+# gem 'rails-gallery'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,3 +53,4 @@ gem 'rails-gallery'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'translit', path: 'translit'

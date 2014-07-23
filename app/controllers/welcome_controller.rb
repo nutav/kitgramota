@@ -5,4 +5,10 @@ class WelcomeController < ApplicationController
 	
 	def contacts 
 	end
+
+	def why_chinese
+	end
+	
+	def myths
+	end	
 end

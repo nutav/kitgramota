@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'ChinaCyr';
+  src: url(font_path('ChinaCyr.ttf')) format('truetype');
+}
+
+.china-text{
+	font-family: ChinaCyr;
+	color: #006900;
+	font-size: 2em;
+}

@@ -16,15 +16,19 @@
 //= require_tree .
 //= require foundation
 //= require jquery_nested_form
-
-//= require gallery/responsive
-//= require gallery/slideshow
-//= require gallery/galleria
-//= require gallery/galleria/classic
-//= require gallery/touch_touch
-
-//= require jquery/jquery.easing-1.3
-//= require jquery/jquery.elastislide
-//= require jquery/jquery.tmpl.min
-$(document).foundation();
 $('.rich-text-redacor').redactor();
+
+$(document).foundation({
+  accordion: {
+    // specify the class used for active (or open) accordion panels
+    active_class: 'active',
+    // allow multiple accordion panels to be active at the same time
+    multi_expand: false,
+    // allow accordion panels to be closed by clicking on their headers
+    // setting to false only closes accordion panels when another is opened
+    toggleable: true,
+    callback : function (accordion) {
+        console.log(accordion);
+    }    
+  }
+});
