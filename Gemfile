@@ -54,3 +54,4 @@ gem 'binding_of_caller'
 # gem 'debugger', group: [:development, :test]
 
 gem 'translit', path: 'translit'
+gem 'cancancan', '~> 1.9'

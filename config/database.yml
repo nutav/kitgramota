@@ -2,6 +2,7 @@ development:
   adapter: mysql2
   pool: 5
   encoding: utf8
+  collation: utf8_unicode_ci
   database: gramota
   username: root
   host: 127.0.0.1

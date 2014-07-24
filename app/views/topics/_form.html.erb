@@ -1,0 +1,43 @@
+<%= form_for @topic, url: url do |f| %>
+  <div>
+    <%= f.label :name, class: '' %>
+    <div class="">
+      <%= f.text_field :name, class: '' %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :description, class: '' %>
+    <div class="">
+      <div>
+        <%= f.text_area :description, rows: 10, class: 'rich-text-redactor' %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :status, class: '' %>
+    <div>
+      <%= f.hidden_field :status, class: 'pill-inputs' %>
+      <%= f.select :status, options_for_select(
+              [['Черновик', :draft],
+               ['Публикация', :publication]]) %>
+    </div>
+  </div>
+
+
+
+  <div class="col col-sm-10 col-sm-offset-2">
+   <%= f.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'Отмена', topics_path, class: 'btn btn-default' %>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $('.rich-text-redactor').redactor({
+    lang: 'ru',
+    buttons: ['formatting',  '|', 'table', '|', 'bold', 'italic', 'underline', '|',
+              'alignleft', 'aligncenter', 'alignright', 'justify', '|',
+              'orderedlist', 'unorderedlist', 'outdent', 'indent', '|',
+              'image', 'link'],
+    convertVideoLinks: true
+  });
+</script>

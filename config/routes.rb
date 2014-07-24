@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'myths', to: 'welcome#myths'
   get 'why_chinese', to: 'welcome#why_chinese'
 
-  resources :news
+  resources :topics
   resources :prices
   resources :teachers
 
