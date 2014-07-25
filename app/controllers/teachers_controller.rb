@@ -20,6 +20,12 @@ class TeachersController < ApplicationController
 	end
 
 	def update 
+		@teacher.update(resource_params)
+		if @teacher.save!
+	      redirect_to teachers_path, notice: "Была изменена запись о преподавателе по имени #{@teacher.full_name}"
+	    else
+	      render action: :edit
+	    end
 	end
 
 	def destroy 
