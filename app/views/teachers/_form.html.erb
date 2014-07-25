@@ -1,0 +1,81 @@
+<%= form_for @teacher, url: url do |f| %>
+  <div>
+      <%= f.label :last_name, class: '' %>
+      <div class="">
+          <%= f.text_field :last_name, class: '', required: true %>
+      </div>
+  </div>
+  <div>
+      <%= f.label :first_name, class: '' %>
+      <div class="">
+          <%= f.text_field :first_name, class: '', required: true %>
+      </div>
+  </div>
+  <div>
+      <%= f.label :patronym, class: '' %>
+      <div class="">
+          <%= f.text_field :patronym, class: '' %>
+      </div>
+  </div>
+
+  <div>
+      <%= f.label :education, class: '' %>
+      <div class="">
+          <div>
+              <%= f.text_area :education, rows: 3 %>
+          </div>
+      </div>
+  </div>
+  <div>
+      <%= f.label :probation, class: '' %>
+      <div class="">
+          <div>
+              <%= f.text_area :probation, rows: 3 %>
+          </div>
+      </div>
+  </div>
+  <div>
+      <%= f.label :speciality, class: '' %>
+      <div class="">
+          <div>
+              <%= f.text_area :speciality, rows: 3 %>
+          </div>
+      </div>
+  </div>
+  <div>
+      <%= f.label :extra, class: '' %>
+      <div class="">
+          <div>
+              <%= f.text_area :extra, rows: 3 %>
+          </div>
+      </div>
+  </div>
+  <div>
+      <%= f.label :years, class: '' %>
+      <div class="">
+          <div>
+              <%= f.number_field :years, min: 0 %>
+          </div>
+      </div>
+  </div>
+
+  <div>
+      <%= f.label :about, class: '' %>
+      <div class="">
+          <div>
+              <%= f.text_area :about, rows: 5 %>
+          </div>
+      </div>
+  </div>
+
+  <div>
+    <%= f.label :avatar %>
+    <div>
+        <%= f.file_field :avatar %>
+    </div>
+  </div>
+
+  <div class="col col-sm-10 col-sm-offset-2">
+      <%= f.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'Отмена', albums_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

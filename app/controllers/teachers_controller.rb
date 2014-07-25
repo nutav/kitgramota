@@ -8,6 +8,12 @@ class TeachersController < ApplicationController
 	end
 
 	def create
+		@teacher = Teacher.create(resource_params)
+	    if @teacher.save!
+	      redirect_to teachers_path, notice: "Была добавлена запись о преподавателе по имени #{@teacher.full_name}"
+	    else
+	      render action: :new 
+	    end
 	end
 
 	def edit
@@ -20,6 +26,7 @@ class TeachersController < ApplicationController
 	end
 
 	def resource_params
-		params.require(:teacher).permit(:last_name, :first_name)
+		params.require(:teacher).permit(:last_name, :first_name, :patronym,
+			:extra, :education, :probation, :speciality, :years, :about, :avatar)
 	end
 end

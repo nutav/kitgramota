@@ -1,0 +1,71 @@
+<% Education::Level.all.each do |level| %>
+<h2><%= level.name %></h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>1 ак.ч. (40 мин)</th>
+      <th>1 месяц</th>
+      <th>3 месяца</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% level.prices.no_individual.order(:saturday).each do |price| %>
+      <tr>
+        <td><%= price.type.name %> <%= '(включая занятие в субботу <a href="#saturdays">*</a>)'.html_safe if price.saturday? %></td>
+        <td><%= price.sum %> руб.</td>
+        <% week_price = @prices.find_week_price(price.level.id, price.type.id) if price.saturday? %>
+        <td><%= price.saturday? && week_price ? (price.sum*2*price.type.hours + week_price.sum*2*price.type.hours) : price.sum*4*price.type.hours %> руб.</td>
+        <td><%= price.saturday? && week_price ? (price.sum*6*price.type.hours + week_price.sum*6*price.type.hours) : price.sum*12*price.type.hours %> руб.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<p><a name="saturdays">*Занятия проводятся два раза в неделю: один будний день и суббота.</a></p>
+
+<h2>Индивидуальные занятия</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
+        <th><%= level.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prices.individuals.collect{|p| p.type}.uniq.each do |type| %>
+      <tr>
+        <td><%= type.name %></td>
+        <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
+        <td><%= @prices.individuals.from_level(level).from_type(type).first.sum.to_s + ' руб.' if @prices.individuals.from_level(level).from_type(type).take %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Стоимость</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @prices.each do |price| %>
+  		<tr>
+  			<td><%= price.id %></td>
+  			<td>
+  				<h3><%= price.level.name %>, <%= price.type.name %></h3>
+  				<div><%= price.sum %></div>
+          <div><%= 'суббота' if price.saturday? %></div>
+          <div><%= 'индивидуальное' if price.individual? %></div>
+  			</td>
+  		</tr>
+  	<% end %>
+  </tbody>
+</table>

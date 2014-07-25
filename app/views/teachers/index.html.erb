@@ -12,7 +12,7 @@
 
 <ul class="small-block-grid-2">
 <%= @teachers.each do |teacher| %>	
-	<li><!-- Photo --></li>
+	<li><%= image_tag teacher.avatar.url %></li>
 	<li><!-- Description --></li>
 <% end %>
 </ul>
