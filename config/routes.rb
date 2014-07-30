@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'contacts', to: 'welcome#contacts'
   get 'myths', to: 'welcome#myths'
   get 'why_chinese', to: 'welcome#why_chinese'
+  get 'news', to: 'topics#news'
+  get 'news/:id', to: 'topics#show'
 
   resources :topics
   resources :prices

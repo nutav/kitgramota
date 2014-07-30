@@ -3,11 +3,16 @@ class TopicsController < ApplicationController
 
 	def index
 	end
+
+	def news
+		@topics = Topic.publications
+	end
 	
 	def new 
 	end
 
 	def show
+		@topic = Topic.find(params[:id])
 	end	
 
 	def create
