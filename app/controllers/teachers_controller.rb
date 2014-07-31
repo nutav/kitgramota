@@ -3,6 +3,10 @@ class TeachersController < ApplicationController
 
 	def index
 	end
+
+	def laoshi
+		@teachers = Teacher.all
+	end
 	
 	def new 
 	end

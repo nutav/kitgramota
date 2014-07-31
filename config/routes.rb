@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   get 'myths', to: 'welcome#myths'
   get 'why_chinese', to: 'welcome#why_chinese'
   get 'news', to: 'topics#news'
+  get 'laoshi', to: 'teachers#laoshi'
   get 'news/:id', to: 'topics#show'
+  get 'courses', to: 'education/levels#courses'
 
   resources :topics
+  resources :articles
   resources :prices
   resources :teachers
 

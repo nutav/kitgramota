@@ -1,0 +1,16 @@
+<h1>
+	<div class="row">
+	<div class="small-7 columns">
+		<%= @article.name %>
+	</div>
+	<div class="small-3 columns">	
+		<div class="yashare-auto-init" data-yashareL10n="ru"
+	     data-yashareQuickServices="vkontakte,facebook,twitter" data-yashareTheme="counter"
+	     data-yashareLink="<%= topic_url(@article)%>" data-yashareTitle="<%= @article.name %>" data-yashareDescription="<%= raw @article.description.truncate(90) %>">
+	 	</div>
+	</div> 	
+ </div>
+</h1>
+
+<div><%= raw @article.description %></div>
+

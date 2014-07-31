@@ -1,0 +1,15 @@
+<h1>Статьи</h1>
+
+<% @articles.each do |article| %>
+  <h3 class="text-center"><%= topic.name %></h3>
+  <div>
+    <% if article.description.length > 500 %>
+          <%= raw article.description.truncate(500) %>
+          <%= link_to '<p class="lead">Читать далее</p>'.html_safe, article_path(article) %>
+        <% else %>
+        <%= raw article.description %>
+      <% end %>
+  </div>
+  <hr>
+  <br>
+<% end %>

@@ -1,12 +1,14 @@
 class Education::LevelsController < ApplicationController
-  # load_and_authorize_resource class: 'New'
+  load_resource class: 'Education::Level'
 
   def index
+  end
+
+  def courses
     @levels = Education::Level.all
   end
 
   def new
-    @level = Education::Level.new
   end
 
   def create
