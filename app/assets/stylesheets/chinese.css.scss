@@ -4,7 +4,22 @@
 }
 
 .china-text{
-	font-family: ChinaCyr;
-	color: #006900;
-	font-size: 2em;
+	font-family: ChinaCyr !important;
+	color: #006900 !important;
+	font-size: 2em !important;
+}
+
+.myths a{
+	font-family: ChinaCyr !important;
+}
+
+ul.navigation li a{
+	padding: 0.1rem 0.5rem;
+}
+ul.navigation{
+	margin: 0.8rem auto;
+}
+
+h1{
+	text-align: center;
 }

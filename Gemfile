@@ -31,7 +31,7 @@ group :development do
 	gem 'spring'
 end	
 
-gem 'foundation-rails'
+# gem 'foundation-rails'
 gem 'simple-navigation'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'nested_form'

@@ -1,7 +1,7 @@
 SimpleNavigation::Configuration.run do |navigation|
 	navigation.selected_class = 'active'
   navigation.items do |primary|
-    primary.dom_class = 'inline-list sub-nav'
+    primary.dom_class = 'inline-list sub-nav navigation'
     primary.item :root, 'Главная', root_path
     primary.item :news, 'Новости', news_path, highlights_on: -> {params[:controller]=='topics' && (params[:action]=='news' || params[:action]=='show')}
     primary.item :why, 'Зачем учить китайский?', why_chinese_path
