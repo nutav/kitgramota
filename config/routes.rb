@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'contacts', to: 'welcome#contacts'
   get 'myths', to: 'welcome#myths'
   get 'why_chinese', to: 'welcome#why_chinese'
+  get 'why_we', to: 'welcome#why_we'
+  get 'partners', to: 'welcome#partners'
   get 'news', to: 'topics#news'
   get 'laoshi', to: 'teachers#laoshi'
   get 'news/:id', to: 'topics#show'
@@ -25,8 +27,9 @@ Rails.application.routes.draw do
 
 
   namespace :education do
-    resources :levels
+    resources :levels 
     resources :types
+    resources :claims
   end
 
   # Example of regular route:

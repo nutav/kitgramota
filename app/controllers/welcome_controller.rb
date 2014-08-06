@@ -10,5 +10,11 @@ class WelcomeController < ApplicationController
 	end
 	
 	def myths
+	end
+
+	def why_we
+	end
+
+	def partners
 	end	
 end

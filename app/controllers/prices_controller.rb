@@ -1,8 +1,9 @@
 class PricesController < ApplicationController
-  # load_and_authorize_resource class: 'New'
+  before_filter :authenticate_admin!, except: :index
+  load_and_authorize_resource class: 'Price', except: :index
+  load_resource class: 'Price', only: :index
 
   def index
-    @prices = Price.all
   end
 
   def new

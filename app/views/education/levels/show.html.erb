@@ -1,9 +1,9 @@
 <h1><%= @level.name %></h1>
 
   <div>Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
-      <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "#leaveClaim#{@level.id}" } %>
+      <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" } %>
   </div>
-  <%= render partial: 'leave_claim_reveal', locals: {level: @level} %>
+  <%= render partial: 'leave_claim_reveal', locals: {level: @level, claim: Education::Claim.new} %>
 
 
 <div><%= raw @level.description %></div>

@@ -11,7 +11,7 @@ $ ->
 
 	$('.flexslider').flexslider({
 	    animation: "slide",
-	    animationLoop: true,
+	    animationLoop: false,
 	    itemWidth: 180,
 	    itemMargin: 5
 	})
