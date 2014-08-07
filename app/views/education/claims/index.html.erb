@@ -1,0 +1,41 @@
+<h1>Оставленные заявки</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Имя</th>
+			<th>Телефон</th>
+			<th>Эл. почта</th>
+			<th>Курс</th>
+			<th>Комментарий</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @claims.each_with_index do |claim, i| %>
+		<tr>
+			<td><%= i+1 %></td>
+			<td><%= claim.name %></td>
+			<td><%= claim.phone %></td>
+			<td><%= claim.email %></td>
+			<td><strong><%= claim.level.name %></strong></td>
+			<td><%= claim.comment %></td>
+			<td>
+				<% unless claim.accepted? %>
+		            <%= form_for claim, url: education_claim_path(claim) do |f| %>
+		            	<%= f.hidden_field :status, value: 2 %>
+		            	<button type="submit" class="button success" title="Подтвердить">
+		              		<span class="glyphicon-icon ok"></span>
+		            	</button>
+		            <% end %>
+		            <br><br>
+		        <% end %>
+		        <%= link_to education_claim_path(claim), method: :delete, class: 'button alert', title: 'Удалить', confirm: 'Вы уверены?' do %>
+		          	<span class="glyphicon-icon remove"></span>
+		        <% end %>
+			</td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
