@@ -17,4 +17,7 @@ class WelcomeController < ApplicationController
 
 	def partners
 	end	
+
+	def gallery
+	end	
 end

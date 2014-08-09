@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'laoshi', to: 'teachers#laoshi'
   get 'news/:id', to: 'topics#show'
   get 'courses', to: 'education/levels#courses'
+  get 'gallery', to: 'welcome#gallery'
 
   resources :topics
   resources :articles
