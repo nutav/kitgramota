@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require redactor
+//= require vendor_foundation
 //= require_tree .
 //= require jquery_nested_form
 
