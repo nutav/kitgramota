@@ -3,8 +3,8 @@
 <% @topics.each do |topic| %>
 	<h3 class="text-center"><%= topic.name %></h3>
 	<div>
-		<% if topic.description.length > 500 %>
-      		<%= raw topic.description.truncate(500) %>
+		<% if topic.description.length > 800 %>
+      		<%= raw topic.description.truncate(800) %>
       		<%= link_to '<p class="lead">Читать далее</p>'.html_safe, topic_path(topic) %>
       	<% else %>
         <%= raw topic.description %>
