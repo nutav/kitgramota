@@ -28,7 +28,12 @@ class TopicsController < ApplicationController
 	end
 
 	def update 
-		@new = Topic.update(resource_params)
+		@topic = @topic.update(resource_params)
+		if @topic.save!
+			redirect_to topics_path
+		else
+			render action: :edit
+		end
 	end
 
 	def destroy 
