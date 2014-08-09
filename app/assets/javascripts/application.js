@@ -13,19 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require vendor_foundation/afoundation
-//= require vendor_foundation/foundation.abide
-//= require vendor_foundation/foundation.accordion
-//= require vendor_foundation/foundation.alert
-//= require vendor_foundation/foundation.clearing
-//= require vendor_foundation/foundation.dropdown
-//= require vendor_foundation/foundation.reveal
-//= require vendor_foundation/foundation.tab
-//= require vendor_foundation/foundation.tooltip
-//= require vendor_foundation/foundation.topbar
-//= require vendor_foundation/jquery.cookie
-//= require vendor_foundation/my_fond
-//= require foundation.min
 //= require_tree .
 //= require jquery_nested_form
 
