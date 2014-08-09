@@ -11,7 +11,7 @@
 <p class="text-justify">Ниже Вы можете ознакомиться с преподавательским составом "Китайской грамоты", выбрать себе репетитора и записаться на занятия по телефонам, указанным в разделе "Контакты".</p>
 
 
-<% @teachers.order(:id)each do |teacher| %>
+<% @teachers.order(:id).each do |teacher| %>
 <div class="row">	
 	<div class="small-3 columns"><%= image_tag teacher.avatar.url, style: 'max-width: 180% !important' %></div>
 	<div class="small-7 columns">
