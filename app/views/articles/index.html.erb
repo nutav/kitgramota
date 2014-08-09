@@ -3,8 +3,8 @@
 <% @articles.each do |article| %>
   <h3 class="text-center"><%= article.name %></h3>
   <div>
-    <% if article.description.length > 500 %>
-          <%= raw article.description.truncate(500) %>
+    <% if article.text.length > 800 %>
+          <%= raw article.text.truncate(800) %>
           <%= link_to '<p class="lead">Читать далее</p>'.html_safe, article_path(article) %>
         <% else %>
         <%= raw article.description %>
