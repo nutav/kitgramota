@@ -9,9 +9,9 @@ $ ->
         }
     })
 
-	$('.flexslider').flexslider({
-	    animation: "slide",
-	    animationLoop: false,
-	    itemWidth: 180,
-	    itemMargin: 5
-	})
+	#$('.flexslider').flexslider({
+	#   animation: "slide",
+	#   animationLoop: false,
+	#   itemWidth: 180,
+	#   itemMargin: 5
+	#})

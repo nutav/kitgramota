@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :authenticate_admin!, except: :index
+  # before_filter :authenticate_admin!, except: :index
   # load_and_authorize_resource class: 'New'
 
   def index
