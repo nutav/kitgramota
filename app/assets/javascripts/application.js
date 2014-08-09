@@ -25,7 +25,9 @@
 //= require vendor_foundation/foundation.tab
 //= require vendor_foundation/foundation.tooltip
 //= require vendor_foundation/foundation.topbar
+//= require vendor_foundation/jquery.cookie
 //= require vendor_foundation/my_fond
+//= require foundation.min
 //= require_tree .
 //= require jquery_nested_form
 
