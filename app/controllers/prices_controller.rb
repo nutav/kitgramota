@@ -1,7 +1,8 @@
 class PricesController < ApplicationController
-  before_filter :authenticate_admin!, except: :index
-  load_and_authorize_resource class: 'Price', except: :index
-  load_resource class: 'Price', only: :index
+  # before_filter :authenticate_admin!, except: :index
+  # load_and_authorize_resource class: 'Price', except: :index
+  load_resource class: 'Price'
+  # , only: :index
 
   def index
   end
