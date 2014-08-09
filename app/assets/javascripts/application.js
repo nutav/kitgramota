@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require redactor/redactor
-//= require redactor/ru
 //= require vendor_foundation/afoundation
 //= require vendor_foundation/foundation.abide
 //= require vendor_foundation/foundation.accordion
