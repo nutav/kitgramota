@@ -1,7 +1,7 @@
 <h1>Статьи</h1>
 
 <% @articles.each do |article| %>
-  <h3 class="text-center"><%= topic.name %></h3>
+  <h3 class="text-center"><%= article.name %></h3>
   <div>
     <% if article.description.length > 500 %>
           <%= raw article.description.truncate(500) %>

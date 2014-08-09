@@ -39,6 +39,6 @@ class ArticlesController < ApplicationController
 
 	private
 	def resource_params
-		params.require(:article).permit(:name, :description, :status, :created_at, :updated_at)
+		params.require(:article).permit(:name, :text, :status, :created_at, :updated_at)
 	end
 end
