@@ -1,9 +1,16 @@
 <h1><%= @level.name %></h1>
 
-  <div>Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
-      <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" } %>
-  </div>
-  <%= render partial: 'leave_claim_reveal', locals: {level: @level, claim: Education::Claim.new} %>
+<% if flash[:notice] == 'Спасибо за Вашу заявку! Мы обязательно с Вами свяжемся в ближайшее время.' %>
+	<div class="alert-box success radius"><%= flash[:notice] %></div>
+<% else %>
+	<% if flash[:notice] %>
+		<div class="alert-box alert radius"><%= flash[:notice] %></div>
+	<% end %>	
+	<div class="alert-box success radius">Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
+	      <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" }, class: 'button' %>
+	  </div>
+  	<%= render partial: 'leave_claim_reveal', locals: {level: @level, claim: Education::Claim.new} %>
+<% end %>  
 
-
+<br>
 <div><%= raw @level.description %></div>
