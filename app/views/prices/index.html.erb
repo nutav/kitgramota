@@ -23,9 +23,9 @@
 </table>
 <% end %>
 
-<p><a name="saturdays">*Занятия проводятся два раза в неделю: один будний день и суббота.</a></p>
+<p><a name="saturdays">* Только для готовых мини-групп. Занятия проводятся два раза в неделю: один будний день и суббота.</a></p>
 
-<h2>Индивидуальные занятия</h2>
+<h2>Индивидуальные занятия<br><small>(Стоимость указана за 1 ак. час, одно занятие - 2 ак. часа минимум)</small></h2>
 <table>
   <thead>
     <tr>
@@ -46,26 +46,3 @@
     <% end %>
   </tbody>
 </table>  
-
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Стоимость</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  	<% @prices.each do |price| %>
-  		<tr>
-  			<td><%= price.id %></td>
-  			<td>
-  				<h3><%= price.level.name %>, <%= price.type.name %></h3>
-  				<div><%= price.sum %></div>
-          <div><%= 'суббота' if price.saturday? %></div>
-          <div><%= 'индивидуальное' if price.individual? %></div>
-  			</td>
-  		</tr>
-  	<% end %>
-  </tbody>
-</table>
