@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
 	end
 
 	def news
-		@topics = Topic.publications
+		@topics = Topic.publications.order('id DESC')
 	end
 	
 	def new 

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 	load_resource
 
 	def index
+		@articles = @articles.order('id DESC')
 	end
 	
 	def new 
