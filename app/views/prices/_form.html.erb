@@ -3,7 +3,7 @@
       <%= f.label :education_level_id, class: '' do %>
       <div class="">
           <%= f.select :education_level_id, 
-          options_from_collection_for_select(Education::Level.all, :id, :name), 
+          options_from_collection_for_select(Education::Level.all, :id, :name, f.object.education_level_id), 
           class: '' %>
       </div>
       <% end %>
@@ -12,7 +12,7 @@
       <%= f.label :education_type_id, class: '' do %>
       <div class="">
           <%= f.select :education_type_id, 
-          options_from_collection_for_select(Education::Type.all, :id, :name), 
+          options_from_collection_for_select(Education::Type.all, :id, :name, f.object.education_type_id), 
           class: '' %>
       </div>
       <% end %>
@@ -37,7 +37,8 @@
       </div>
       <% end %>
   </div>
-  <div class="col col-sm-10 col-sm-offset-2">
-      <%= f.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'Отмена', prices_path, class: 'btn btn-default' %>
+  <br>
+  <div>
+      <%= f.submit 'Сохранить', class: 'button' %> или <%= link_to 'Отмена', prices_path %>
   </div>
 <% end %>

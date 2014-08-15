@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+     article: 'статья'
+    attributes:
+      article:
+        name: 'название'
+        text: 'текст'
+        status: 'статус'

@@ -7,6 +7,9 @@ class PricesController < ApplicationController
   def index
   end
 
+  def actual
+  end
+
   def new
     @price = Price.new
   end

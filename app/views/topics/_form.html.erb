@@ -21,7 +21,7 @@
       <%= f.hidden_field :status, class: 'pill-inputs' %>
       <%= f.select :status, options_for_select(
               [['Черновик', :draft],
-               ['Публикация', :publication]]) %>
+               ['Публикация', :publication]], f.object.status) %>
     </div>
   </div>
 

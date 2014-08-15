@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
-#gem 'mysql2'
+gem 'mysql2', group: [:development, :test]
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,7 +48,7 @@ gem 'binding_of_caller'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'pg'
+gem 'pg', group: :prodaction
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

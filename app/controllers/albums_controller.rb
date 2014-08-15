@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   # before_filter :authenticate_admin!, except: :index
-  # load_and_authorize_resource class: 'New'
+  load_resource class: 'Album'
 
   def index
     @albums = Album.all
@@ -24,9 +24,9 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    @album = Album.find(params[:id]).update_attributes(resource_params)
+    @album.update(resource_params)
     if @album.save!
-      redirect_to album_photos_path, notice: "Альбом #{@album.name} был успешно изменён"
+      redirect_to albums_path, notice: "Альбом #{@album.name} был успешно изменён"
     else
       render action: :edit
     end 
@@ -41,6 +41,6 @@ class AlbumsController < ApplicationController
 
   def resource_params
     params.require(:album).permit(:name, :description, :created_at, :updated_at,
-      photos_attributes: [:id, :name, :picture])
+      photos_attributes: [:id, :name, :picture, :'_destroy'])
   end
 end

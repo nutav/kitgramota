@@ -1,49 +1,43 @@
 <h1>Цены</h1>
-<% Education::Level.all.each do |level| %>
-<h2><%= level.name %></h2>
-<table>
+
+<%= link_to new_price_path, class: 'button' do %>
+    <span class="glyphicons-icon hospital"></span> Создать новую ценовую категорию
+<% end %>
+
+<% if @prices.any? %>
+<table style="width: 100%;">
   <thead>
     <tr>
+      <th>#</th>
+      <th>Курс</th>
+      <th>Тип</th>
+      <th>Стоимость 1 ак. ч.</th>
+      <th>В субботу?</th>
+      <th>Индивидуальное?</th>
       <th></th>
-      <th>1 ак.ч. (40 мин)</th>
-      <th>1 месяц</th>
-      <th>3 месяца</th>
     </tr>
   </thead>
   <tbody>
-    <% level.prices.no_individual.order(:saturday).each do |price| %>
+    <% @prices.each do |price| %>
       <tr>
-        <td><%= price.type.name %> <%= '(включая занятие в субботу <a href="#saturdays">*</a>)'.html_safe if price.saturday? %></td>
+        <td><%= price.id %></td>
+        <td><%= price.level.name %></td>
+        <td><%= price.type.name %></td>
         <td><%= price.sum %> руб.</td>
-        <% week_price = @prices.find_week_price(price.level.id, price.type.id) if price.saturday? %>
-        <td><%= price.saturday? && week_price ? (price.sum*2*price.type.hours + week_price.sum*2*price.type.hours) : price.sum*4*price.type.hours %> руб.</td>
-        <td><%= price.saturday? && week_price ? (price.sum*6*price.type.hours + week_price.sum*6*price.type.hours) : price.sum*12*price.type.hours %> руб.</td>
-      </tr>
+        <td><%= price.saturday? ? 'да' : '' %></td>
+        <td><%= price.individual? ? 'да' : '' %></td>
+        <td>
+          <%= link_to edit_price_path(price), class: 'button', title: 'Редактировать' do %>
+            <span class="glyphicons pen"></span>
+          <% end %>
+          <%= link_to price_path(price), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
+      </tr> 
     <% end %>
   </tbody>
 </table>
+<% else %>
+  <p>Пока не было создано ни одного альбома</p>
 <% end %>
-
-<p><a name="saturdays">* Только для готовых мини-групп. Занятия проводятся два раза в неделю: один будний день и суббота.</a></p>
-
-<h2>Индивидуальные занятия<br><small>(Стоимость указана за 1 ак. час, одно занятие - 2 ак. часа минимум)</small></h2>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
-        <th><%= level.name %></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @prices.individuals.collect{|p| p.type}.uniq.each do |type| %>
-      <tr>
-        <td><%= type.name %></td>
-        <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
-        <td><%= @prices.individuals.from_level(level).from_type(type).first.sum.to_s + ' руб.' if @prices.individuals.from_level(level).from_type(type).take %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>  

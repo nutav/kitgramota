@@ -3,6 +3,9 @@ class ArticlesController < ApplicationController
 	load_resource
 
 	def index
+	end
+
+	def publications
 		@articles = @articles.order('id DESC')
 	end
 	

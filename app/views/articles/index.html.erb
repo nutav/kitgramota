@@ -1,15 +1,37 @@
 <h1>Статьи</h1>
 
-<% @articles.each do |article| %>
-  <h3 class="text-center"><%= article.name %></h3>
-  <div>
-    <% if article.text.length > 800 %>
-          <%= raw article.text.truncate(800) %>
-          <%= link_to '<p class="lead">Читать далее</p>'.html_safe, article_path(article) %>
-        <% else %>
-        <%= raw article.description %>
-      <% end %>
-  </div>
-  <hr>
-  <br>
+<%= link_to new_article_path, class: 'button' do %>
+    <span class="glyphicons-icon hospital"></span> Создать новую статью
+<% end %>
+
+<% if @articles.any? %>
+<table style="width: 100%;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Статья</th>
+      <th>Статус</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.id %></td>
+        <td><%= article.name %></td>
+        <td><%= article.status_name %></td>
+        <td>
+          <%= link_to edit_article_path(article), class: 'button', title: 'Редактировать' do %>
+            <span class="glyphicons pen"></span>
+          <% end %>
+          <%= link_to article_path(article), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+          <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        </td>
+      </tr> 
+    <% end %>
+  </tbody>
+</table>
+<% else %>
+  <p>Пока не было создано ни одной статьи</p>
 <% end %>

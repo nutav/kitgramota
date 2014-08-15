@@ -1,0 +1,32 @@
+<h1>Администраторы</h1>
+
+<%= link_to new_admin_registration_path, class: 'button' do%>
+  <span class='glyphicon glyphicon-plus'></span> Добавить нового администратора
+<% end %>
+
+<table>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Логин</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @admins.each do |admin| %>
+    <tr>
+      <td><%= admin.id %></td>
+      <td><%= admin.login %></td>
+      <td>
+        <%= link_to edit_admin_path(admin), title: 'Редактировать', class: 'button' do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+        <%= link_to admin_path(admin), title: 'Удалить', method: :delete, data: { confirm: 'Вы уверены?' },
+                       class: 'btn btn-danger' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

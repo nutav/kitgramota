@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
 	end
 
 	def update 
-		@topic = @topic.update(resource_params)
+		@topic.update(resource_params)
 		if @topic.save!
 			redirect_to topics_path
 		else

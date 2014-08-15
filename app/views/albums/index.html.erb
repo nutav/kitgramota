@@ -1,11 +1,45 @@
-<h1>Галерея</h1>
-<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-  <% @albums.with_photos.each do |album| %>	
-  <li>
-  	<%= link_to album_photos_path(album) do %>
-  		<%= image_tag album.photos.first.picture.url(:medium) %>
-  		<h3><%= album.name %></h3>
-  	<% end %>	
-  </li>
-  <% end %>
-</ul>
+<h1>Альбомы</h1>
+
+<%= link_to new_album_path, class: 'button' do %>
+  	<span class="glyphicons-icon hospital"></span> Создать новый альбом
+<% end %>
+
+<% if @albums.any? %>
+<table style="width: 100%;">
+  <thead>
+  	<tr>
+  		<th>#</th>
+  		<th>Альбом</th>
+  		<th>Количество фото</th>
+  		<th></th>
+  	</tr>
+  </thead>
+  <tbody>
+  	<% @albums.each do |album| %>
+  	  <tr>
+  	  	<td><%= album.id %></td>
+  	  	<td>
+  	  		<h3><%= album.name %></h3>
+  	  		<p><%= album.description %><p>
+  	  		<% if album.photos.any? %>
+  				<%= image_tag album.photos.first.picture.url(:medium) %>
+  			<% else %>
+  				<p>В альбоме нет фотографий</p>
+  			<% end %>
+  	    </td>
+  	    <td><%= album.photos.length %></td>
+  	    <td>
+  	    	<%= link_to edit_album_path(album), class: 'button', title: 'Редактировать' do %>
+  	    		<span class="glyphicons pen"></span>
+  	    	<% end %>
+  	    	<%= link_to album_path(album), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+	          <span class="glyphicon glyphicon-remove"></span>
+	        <% end %>
+  	    </td>
+  	  </tr>	
+  	<% end %>
+  </tbody>
+</table>
+<% else %>
+	<p>Пока не было создано ни одного альбома</p>
+<% end %>

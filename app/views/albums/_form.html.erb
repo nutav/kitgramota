@@ -31,11 +31,15 @@
         <div>
             <%= photo_f.label :picture %>
             <div>
-                <%= photo_f.file_field :picture %>
+                <% if photo_f.object.picture.url != '/images/original/missing.png' %>
+                  <%= image_tag photo_f.object.picture.url(:medium) %>
+                <% else %>
+                  <%= photo_f.file_field :picture%>
+                <% end %>  
             </div>
         </div>
 
-        <%= photo_f.link_to_remove title: 'Удалить' do %>
+        <%= photo_f.link_to_remove title: 'Удалить', style: 'color: #a00;' do %>
           Удалить фотографию
         <% end %>
         <br><br>
@@ -45,8 +49,8 @@
   </fieldset>
 
 
-
+  <br>
   <div class="col col-sm-10 col-sm-offset-2">
-      <%= f.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'Отмена', albums_path, class: 'btn btn-default' %>
+      <%= f.submit 'Сохранить', class: 'button' %> или <%= link_to 'Отмена', albums_path, class: 'btn btn-default' %>
   </div>
 <% end %>

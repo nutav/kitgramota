@@ -1,0 +1,38 @@
+<h1>Галерея</h1>
+<div id="slider" class="flexslider">
+  <ul class="slides">
+    <% [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].each do |i| %>
+    <li><img src="/images/<%= i %>.jpg" alt="фотография <%= i %>"></li>
+    <% end %>
+  </ul>
+</div>
+<div id="carousel" class="flexslider">
+  <ul class="slides">
+    <% [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].each do |i| %>
+    <li><img src="/images/<%= i %>.jpg" alt="фотография <%= i %>"></li>
+    <% end %>
+  </ul>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    direction: "vertical",
+    itemWidth: 210,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+   
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel"
+  });
+});
+</script>

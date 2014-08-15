@@ -1,0 +1,51 @@
+<h1>Цены</h1>
+<% Education::Level.all.each do |level| %>
+<h2><%= level.name %></h2>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th></th>
+      <th>1 ак.ч. (40 мин)</th>
+      <th>1 месяц</th>
+      <th>3 месяца</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% level.prices.no_individual.order(:saturday).each do |price| %>
+      <tr>
+        <td><%= price.type.name %> <%= '(включая занятие в субботу <a href="#saturdays">*</a>)'.html_safe if price.saturday? %></td>
+        <td><%= price.sum %> руб.</td>
+        <% week_price = @prices.find_week_price(price.level.id, price.type.id) if price.saturday? %>
+        <% p_month = price.saturday? && week_price ? (price.sum*2*price.type.hours + week_price.sum*2*price.type.hours) : price.sum*4*price.type.hours %>
+        <% p_semester = price.saturday? && week_price ? (price.sum*6*price.type.hours + week_price.sum*6*price.type.hours) : price.sum*12*price.type.hours %>
+        <td><%= (p_month+100)/100*100 %> руб.</td>
+        <td><%= (p_semester+100)/100*100 %> руб.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<p><a name="saturdays">* Только для готовых мини-групп. Занятия проводятся два раза в неделю: один будний день и суббота.</a></p>
+
+<h2>Индивидуальные занятия<br><small>(Стоимость указана за 1 ак. час, одно занятие - 2 ак. часа минимум)</small></h2>
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th></th>
+      <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
+        <th><%= level.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prices.individuals.collect{|p| p.type}.uniq.each do |type| %>
+      <tr>
+        <td><%= type.name %></td>
+        <% @prices.individuals.collect{|p| p.level}.uniq.each do |level| %>
+        <td><%= @prices.individuals.from_level(level).from_type(type).first.sum.to_s + ' руб.' if @prices.individuals.from_level(level).from_type(type).take %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>  

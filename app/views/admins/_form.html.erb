@@ -1,0 +1,19 @@
+<%= form_for @admin do |f|%>
+	<div>
+      <%= f.label :login, class: '' %>
+      <div class="">
+          <%= f.text_field :login, class: '' %>
+      </div>
+  </div>
+  <div>
+      <%= f.label :password, class: '' %>
+      <div class="">
+          <%= f.password_field :password, class: '' %>
+      </div>
+  </div>
+
+  <br>
+  <div class="col col-sm-10 col-sm-offset-2">
+      <%= f.submit 'Сохранить', class: 'button' %> или <%= link_to 'Отмена', admins_path %>
+  </div>
+<% end %>

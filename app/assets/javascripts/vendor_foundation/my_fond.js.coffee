@@ -8,10 +8,3 @@ $ ->
                 console.log(accordion)   
         }
     })
-
-	#$('.flexslider').flexslider({
-	#   animation: "slide",
-	#   animationLoop: false,
-	#   itemWidth: 180,
-	#   itemMargin: 5
-	#})

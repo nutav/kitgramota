@@ -23,8 +23,14 @@ Rails.application.routes.draw do
   get 'gallery', to: 'welcome#gallery'
 
   resources :topics
-  resources :articles
-  resources :prices
+  resources :admins
+  resources :articles do
+    get 'publications', on: :collection
+  end
+  resources :prices do
+    get '/', to: 'prices#actual', on: :collection
+    get '/all', to: 'prices#index', on: :collection
+  end
   resources :teachers
 
   resources :albums do

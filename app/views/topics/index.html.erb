@@ -1,21 +1,35 @@
 <h1>Новости</h1>
 
+<%= link_to new_topic_path, class: 'button' do %>
+    <span class="glyphicons-icon hospital"></span> Создать новость
+<% end %>
+
 <table>
   <thead>
     <tr>
       <th>#</th>
       <th>Новость</th>
+      <th>Статус</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
   	<% @topics.each do |n| %>
-  		<tr style="background-color: <%= '#BFFFD4' if n.publication? %>">
+  		<tr>
   			<td><%= n.id %></td>
   			<td>
   				<h3><%= n.name %></h3>
   				<div><%= raw n.description %></div>
   			</td>
+        <td><%= n.status_name %></td>
+        <td>
+          <%= link_to edit_topic_path(n), class: 'button', title: 'Редактировать' do %>
+            <span class="glyphicons pen"></span>
+          <% end %>
+          <%= link_to topic_path(n), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+            <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
   		</tr>
   	<% end %>
   </tbody>
