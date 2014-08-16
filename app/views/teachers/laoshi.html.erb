@@ -24,7 +24,7 @@
 		<p><strong>Специализация:</strong> <%= teacher.speciality %></p>
 		<p>
 			<strong>Опыт работы (репетиторство):</strong> <%= teacher.years %> 
-			 <%= Russian::p(teacher.years,'год','года','лет') %>
+			 <% p(teacher.years,'год','года','лет') %>
 		</p>
 		<% if teacher.about? %>
 			<p><%= teacher.about %></p>

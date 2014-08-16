@@ -3,7 +3,10 @@ class AlbumsController < ApplicationController
   load_resource class: 'Album'
 
   def index
-    @albums = Album.all
+  end
+  
+  def gallery
+    @albums = @albums.with_photos
   end
 
   def new

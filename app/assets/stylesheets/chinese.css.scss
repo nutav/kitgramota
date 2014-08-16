@@ -9,6 +9,33 @@
 	font-size: 2em !important;
 }
 
+#carousel .flex-active-slide{
+	border: 3px solid #006900;
+	cursor: default;
+}
+
+#carousel {
+    height: 138px;
+    overflow: hidden;
+}
+
+#carousel li{
+	cursor: pointer;
+}
+
+.phone{
+	font-size: 1.4em;
+	color: #446944 !important;
+}
+
+.contact-logo{
+	position: absolute; 
+	bottom: 0; 
+	left:0; 
+	margin: 0;
+	color: #666;
+}
+
 .myths a{
 	font-family: ChinaCyr !important;
 }

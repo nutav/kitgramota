@@ -1,10 +1,42 @@
 <h1><%= @album.name %></h1>
-<div class="flexslider">
-  <ul class="slides">
-  	<% @photos.each do |photo| %>
-	    <li data-thumb="<%= image_tag photo.picture.url(:medium) %>">
-	  	  <%= image_tag photo.picture.url %>
-	    </li>
-	<% end %>
-  </ul>
-</div>		 
+<div class="row">
+  <div class="columns small-8 small-centered">
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      <% @photos.each do |photo| %>
+      <li><%= image_tag photo.picture.url %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="carousel" class="flexslider">
+    <ul class="slides">
+      <% @photos.each do |photo| %>
+      <li><%= image_tag photo.picture.url %></li>
+      <% end %>
+    </ul>
+  </div> 
+  </div> 
+</div>
+
+<script type="text/javascript">
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 210,
+    itemMargin: 5,
+    minItems: 2,
+    maxItems: 4,
+    asNavFor: '#slider'
+  });
+   
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    smoothHeight: true,
+    sync: "#carousel",
+  });
+</script>	 

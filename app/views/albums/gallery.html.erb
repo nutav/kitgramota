@@ -1,38 +1,12 @@
 <h1>Галерея</h1>
-<div id="slider" class="flexslider">
-  <ul class="slides">
-    <% [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].each do |i| %>
-    <li><img src="/images/<%= i %>.jpg" alt="фотография <%= i %>"></li>
-    <% end %>
-  </ul>
-</div>
-<div id="carousel" class="flexslider">
-  <ul class="slides">
-    <% [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16].each do |i| %>
-    <li><img src="/images/<%= i %>.jpg" alt="фотография <%= i %>"></li>
-    <% end %>
-  </ul>
-</div>
+<ul class="albums small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <% @albums.each do |album| %>  
+  <li>
+    <%= link_to album_photos_path(album) do %>
+      <%= image_tag album.photos.first.picture.url %>
+      <h3><%= album.name %></h3>
+    <% end %>  
+  </li>
+  <% end %>
+</ul>
 
-<script type="text/javascript">
-$(window).load(function() {
-  $('#carousel').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    direction: "vertical",
-    itemWidth: 210,
-    itemMargin: 5,
-    asNavFor: '#slider'
-  });
-   
-  $('#slider').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#carousel"
-  });
-});
-</script>

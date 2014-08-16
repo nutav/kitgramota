@@ -8,7 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :why, 'Зачем учить китайский?', why_chinese_path, highlights_on: -> {params[:controller]=='welcome' && (params[:action]=='why_chinese' || params[:action]=='chinese_for_kids' || params[:action]=='chinese_for_success' || params[:action]=='self_perfection' || params[:action] == 'union_joining' || params[:action] == 'up_to_date' || params[:action] == 'myths')}
     primary.item :articles, 'Статьи', publications_articles_path
     primary.item :courses, 'Курсы', courses_path
-    primary.item :galery, 'Галерея', gallery_path
+    primary.item :galery, 'Галерея', gallery_path, highlights_on: -> {params[:controller]=='albums' || params[:controller]=='photos'}
     primary.item :teachers, 'Лаоши', laoshi_path
     primary.item :prices, 'Цены', prices_path
     primary.item :contacts, 'Контакты', contacts_path

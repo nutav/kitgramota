@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'laoshi', to: 'teachers#laoshi'
   get 'news/:id', to: 'topics#show'
   get 'courses', to: 'education/levels#courses'
-  get 'gallery', to: 'welcome#gallery'
+  get 'gallery', to: 'albums#gallery'
 
   resources :topics
   resources :admins
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :teachers
 
   resources :albums do
+    get 'gallery', to: 'albums#gallery', on: :collection
     resources :photos
   end
 
