@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815113820) do
+ActiveRecord::Schema.define(version: 20140817102639) do
 
   create_table "admins", force: true do |t|
-    t.string   "login",                               null: false
+    t.string   "login",                              null: false
     t.string   "password"
-    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "encrypted_password",                 null: false
   end
 
   add_index "admins", ["login"], name: "index_admins_on_login", unique: true, using: :btree

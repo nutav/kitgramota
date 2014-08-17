@@ -1,6 +1,6 @@
 <h1>Оставленные заявки</h1>
 
-<table>
+<table style="width: 100%">
 	<thead>
 		<tr>
 			<th>#</th>
@@ -19,21 +19,17 @@
 			<td><%= claim.name %></td>
 			<td><%= claim.phone %></td>
 			<td><%= claim.email %></td>
-			<td><strong><%= claim.level.name %></strong></td>
+			<td><strong><%= claim.level ? claim.level.name : 'не определился' %></strong></td>
 			<td><%= claim.comment %></td>
 			<td>
 				<% unless claim.accepted? %>
-		            <%= form_for claim, url: education_claim_path(claim) do |f| %>
-		            	<%= f.hidden_field :status, value: 2 %>
-		            	<button type="submit" class="button success" title="Подтвердить">
-		              		<span class="glyphicon-icon ok"></span>
+		            <%= form_for claim, url: education_claim_path(claim), style: 'margin: 0' do |f| %>
+		            	<%= f.hidden_field :status, value: :accepted %>
+		            	<button style="margin: 0" type="submit" class="button tiny expand">Подтвердить
 		            	</button>
 		            <% end %>
-		            <br><br>
 		        <% end %>
-		        <%= link_to education_claim_path(claim), method: :delete, class: 'button alert', title: 'Удалить', confirm: 'Вы уверены?' do %>
-		          	<span class="glyphicon-icon remove"></span>
-		        <% end %>
+		        <%= link_to 'Отклонить ', education_claim_path(claim), method: :delete, class: 'button tiny alert expand', data: {confirm: 'Вы уверены?'}, style: 'margin: 0'%>
 			</td>
 		</tr>
 	<% end %>

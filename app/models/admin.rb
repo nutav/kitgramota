@@ -1,18 +1,10 @@
 class Admin < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, # :encryptable,
          :recoverable, :rememberable, :trackable, # :validatable
-         authentication_keys: [:login, :password]
+         authentication_keys: [:login]
 
-    before_create :hash_password
-
-	before_update :hash_password, if: :password_changed?
-
-	def hash_password
-	    if self.password.blank?
-	      self.password = self.password_was
-	    else
-	      self.password = Digest::MD5.hexdigest(self.password)
-	    end
+	def password=(new_password)
+	      self.encrypted_password = Digest::MD5.hexdigest(new_password)
 	end
 
 	def valid_password?(password)

@@ -6,5 +6,5 @@ $ ->
 			toggleable: true, 
 			callback : (accordion) ->
                 console.log(accordion)   
-        }
-    })
+        }  
+  })

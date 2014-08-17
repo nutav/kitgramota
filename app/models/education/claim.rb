@@ -1,5 +1,7 @@
 class Education::Claim < ActiveRecord::Base
   self.table_name = 'education_level_claims'
 
-  belongs_to :level, class: 'Education::Level', foreign_key: :education_level_id
+  enum status: {never_saw: 1, accepted: 2}
+
+  belongs_to :level, class_name: 'Education::Level', foreign_key: :education_level_id
 end

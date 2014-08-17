@@ -5,16 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="//yandex.st/share/share.js"
-          charset="utf-8"></script>
   <%= javascript_include_tag 'vendor/modernizr' %>
-  <%= javascript_include_tag 'vendor_foundation/afondation' %>
-  <%= javascript_include_tag 'vendor_foundation/accordion' %>
-  <%= javascript_include_tag 'vendor_foundation/alert' %>
-  <%= javascript_include_tag 'vendor_foundation/reveal' %>
-  <%= javascript_include_tag 'vendor_foundation/tab' %>
-  <%= javascript_include_tag 'vendor_foundation/topbar' %>
-  <%= javascript_include_tag 'vendor_foundation/my_fond' %>
+  <% javascript_include_tag 'vendor_foundation/afondation' %>
+  <% javascript_include_tag 'vendor_foundation/accordion' %>
+  <% javascript_include_tag 'vendor_foundation/alert' %>
+  <% javascript_include_tag 'vendor_foundation/reveal' %>
+  <% javascript_include_tag 'vendor_foundation/tab' %>
+  <% javascript_include_tag 'vendor_foundation/topbar' %>
+  <% javascript_include_tag 'vendor_foundation/my_fond' %>
   <script src="/assets/redactor/redactor.min.js"></script>
   <script src="/assets/redactor/ru.js"></script>
   <%= csrf_meta_tags %>
@@ -22,31 +20,59 @@
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
 </head>
 <body>
-	<div class="row container">
-		<div class="columns middle-12 small-12 large-12 small-centered">
-      <div class="logo_h" style="position:relative;">
-        <p class="china-text" style="font-size: 2.75em !important; position:absolute; top:5%; left:0;">Китайская грамота<br><small style="color: #a71010; font-size: 0.7em !important;">курсы китайского языка</small></p>
-        <dl class="contact-logo">
-          <dt>
-            <%= image_tag 'metro.png', style: 'width: 20px; float: left; margin: 2px;' %>
-            Кузьминки</dt>
-          <dd>
-            <p style="margin: 0;"><span class="phone">+7 (985) 262-83-28</span> Ольга</p>
-            <p style="margin: 0;"><span class="phone">+7 (906) 064-57-10</span> Александр</p>
-          </dd>
-        </dl>
-		    <%= image_tag 'banner_header.jpg', style: 'width: 100%; margin: 0 auto;' %>
-      </div>  
-    
-		<%= render_navigation context: :main %>
+  <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <a class="right-off-canvas-toggle small button radius" style="position: absolute; right: 5px; top: -3px; z-index: 2" href="#" >Записаться</a>
+    <aside class="right-off-canvas-menu" style="background: #ccc;">
+      <%= render partial: 'education/claims/leave', locals: {claim: Education::Claim.new} %>    
+    </aside>
+  	<div class="row container">
+  		<div class="columns middle-12 small-12 large-12 small-centered">
+        <div class="logo_h" style="position:relative;">
+          <p class="china-text" style=" position:absolute; top:5%; left:0;"><a href="<%= root_path %>">Китайская грамота<br><small style="color: #a71010; font-size: 0.7em !important;">курсы китайского языка</small></a></p>
+          <dl class="contact-logo">
+            <dt>
+              <%= image_tag 'metro.png', style: 'width: 20px; float: left; margin: 2px;', id: 'metro' %>
+              Кузьминки</dt>
+            <dd>
+              <p style="margin: 0;"><span class="phone">+7 (985) 262-83-28</span> Ольга</p>
+              <p style="margin: 0;"><span class="phone">+7 (906) 064-57-10</span> Александр</p>
+            </dd>
+          </dl>
+  		    <%= image_tag 'banner_header.jpg', style: 'width: 100%; margin: 0 auto;' %>
+        </div>  
+      
+  		<%= render_navigation context: :main %>
 
-		<%= yield %>
-		</div>
-	</div>
-  <div class="row">
-    <%= link_to new_admin_session_path, title: 'Войти' do %>
-          <span class="glyphicon-icon user"></span>
-    <% end %>
+  		<%= yield %>
+      <div class="footer">
+        <div class="row">
+          <div class="columns middle-5 small-5 large-5">
+            <h5>Курсы Китайского Языка в Москве</h5>
+            <p>г. Москва, Волгоградский пр-т, д.76/2</p>
+            <p><strong>+7 (985) 262-83-28</strong> Ольга</p>
+            <p><strong>+7 (906) 064-57-10</strong> Александр</p>
+            <p>sidorina.rko@yandex.ru</p>
+            <p>a.kartashov@hotmail.com</p>
+            <p><strong><a href="http://vk.com/kit_gramota"><%= image_tag 'vk.png', style: 'width: 30px;' %> Группа ВКонтакте</a></strong></p>
+          </div>
+          <div class="columns middle-7 small-7 large-7">
+            <%= render_navigation context: :side %>
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-center">Китайская грамота — курсы китайского языка | All rights reserved. 2014 ©</p>
+        </div>
+      </div>
+  		</div>
+  	</div>
+    <div class="row">
+      <%= link_to new_admin_session_path, title: 'Войти' do %>
+            <span class="glyphicon-icon user"></span>
+      <% end %>
+    </div>
+    <a class="exit-off-canvas"></a>
   </div>
+  </div>  
 </body>
 </html>

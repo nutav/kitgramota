@@ -1,16 +1,27 @@
 <h1><%= @level.name %></h1>
 
 <% if flash[:notice] == 'Спасибо за Вашу заявку! Мы обязательно с Вами свяжемся в ближайшее время.' %>
-	<div class="alert-box success radius"><%= flash[:notice] %></div>
+	<div class="alert-box radius"><%= flash[:notice] %></div>
 <% else %>
 	<% if flash[:notice] %>
 		<div class="alert-box alert radius"><%= flash[:notice] %></div>
 	<% end %>	
-	<div class="alert-box success radius">Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
-	      <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" }, class: 'button' %>
+	<div class="alert-box radius">Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
+	    <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" }, class: 'open-reveal button tiny success radius', style: 'float: right; margin-top: -0.5%' %>
 	  </div>
   	<%= render partial: 'leave_claim_reveal', locals: {level: @level, claim: Education::Claim.new} %>
 <% end %>  
 
 <br>
 <div><%= raw @level.description %></div>
+
+<script src="/assets/vendor_foundation/foundation.reveal.js"></script>
+<% javascript_include_tag 'vendor_foundation/reveal' %>
+<script type="text/javascript">
+$('.close-reveal-body').click(function(){
+	$('.reveal-modal').foundation('reveal', 'close');
+})
+$('.open-reveal').click(function(){
+	$('#'+$(this).data('reveal-id')).foundation('reveal', 'open');
+})
+</script>

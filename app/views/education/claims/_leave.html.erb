@@ -1,0 +1,21 @@
+<div style="margin: 0 2%">
+<h2 class="text-center">Заявка</h2>
+<%= form_for claim do |f| %>
+    <%= f.label :level, 'Курс' %>
+    <%= f.select :education_level_id, 
+          options_from_collection_for_select(Education::Level.all, :id, :name),prompt: 'не определился' %>
+    <br><br>
+    <%= f.label :name, 'Ваше имя' %>
+    <%= f.text_field :name, required: true, placeholder: '' %>
+    <%= f.label :phone, 'Номер телефона' %>
+    <%= f.text_field :phone, placeholder: '' %>
+    <%= f.label :email, 'Электронная почта' %>
+    <%= f.email_field :email %>
+    <%= f.hidden_field :status, value: :never_saw %>
+    <%= f.label :comment, 'Комментарий к заявке' %>
+    <%= f.text_area :comment, rows: 3 %>
+    <%= hidden_field_tag :url, request.original_url %>
+    <br>
+    <%= f.submit 'Оставить заявку', class: 'button alert expand' %>
+<% end %>
+</div>

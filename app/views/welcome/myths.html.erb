@@ -1,3 +1,8 @@
+<ul class="breadcrumbs">
+  <li><a href="<%= why_chinese_path %>">Зачем учить китайский?</a></li>
+  <li class="current"><a href="#">Мифы о китайском языке</a></li>
+</ul>
+
 <h1>Мифы об изучении китайского языка</h1>
 <%= render partial: 'slider' %>
 <dl class="accordion myths" data-accordion>
@@ -44,3 +49,14 @@
     </div>
   </dd>
 </dl>
+
+<script src="/assets/vendor_foundation/foundation.accordion.js"></script>
+<script type="text/javascript">
+  $(document).foundation({ 
+    accordion: { 
+      active_class: 'active', 
+      multi_expand: false, 
+      toggleable: true,  
+  }
+})
+</script>

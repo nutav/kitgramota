@@ -3,10 +3,12 @@
 	<div class="small-7 columns">
 		<%= @article.name %>
 	</div>
-	<div class="small-3 columns">	
+	<div class="small-3 columns">
+		<script type="text/javascript" src="//yandex.st/share/share.js"
+charset="utf-8"></script>	
 		<div class="yashare-auto-init" data-yashareL10n="ru"
 	     data-yashareQuickServices="vkontakte,facebook,twitter" data-yashareTheme="counter"
-	     data-yashareLink="<%= topic_url(@article)%>" data-yashareTitle="<%= @article.name %>" data-yashareDescription="<%= raw @article.text.truncate(90) %>">
+	     data-yashareLink="<%= topic_url(@article)%>" data-yashareTitle="<%= @article.name %>" data-yashareDescription="Статья '<%= @article.name %>' на сайте курсов китайского языка Китайская грамота">
 	 	</div>
 	</div> 	
  </div>

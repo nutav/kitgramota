@@ -3,11 +3,86 @@
   src: url(font_path('ChinaCyr.ttf')) format('truetype');
 }
 
+.slider{
+	margin-bottom: 1.5% !important;
+}
+
 .china-text{
 	font-family: ChinaCyr !important;
 	color: #006900 !important;
-	font-size: 2em !important;
+	font-size: 2rem !important;
 }
+
+.logo_h .china-text{
+	font-size: 2.75rem !important;	
+	margin: 0;
+}
+
+#metro{
+	display: block;
+}
+@media screen and (max-width: 900px) {
+    .logo_h .china-text{
+		font-size: 2.2em !important;
+		line-height: 1.2;
+	}
+
+	.logo_h .contact-logo{
+		font-size: 1em !important;
+	}
+
+	.logo_h .phone{
+		font-size: 1.1em !important;
+	}
+
+	#metro{
+		display: block;
+	}
+}
+@media screen and (max-width: 800px) {
+    .logo_h .china-text{
+		font-size: 1.8em !important;
+		line-height: 1;
+	}
+
+	.logo_h .contact-logo{
+		font-size: 0.9em !important;
+	}
+
+	.logo_h .phone{
+		font-size: 0.9em !important;
+	}
+
+	#metro{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 550px) {
+    .logo_h .china-text{
+		font-size: 1.6em !important;
+		line-height: 1;
+	}
+
+	.logo_h .contact-logo{
+		font-size: 0.7em !important;
+	}
+
+	.logo_h p{
+		font-size: 0.9em !important;
+	}
+
+	#metro{
+		display: none;
+	}
+
+	dt{
+		margin: 0 !important;
+	}
+}
+
+
+
 
 #carousel .flex-active-slide{
 	border: 3px solid #006900;
@@ -42,6 +117,13 @@
 
 ul.navigation li a{
 	padding: 0.05rem 0.02rem;
+	margin-bottom: 0; 
+}
+ul.navigation li{
+	margin: 0 0 0.3rem 1rem; 
+}
+ul.navigation li.active{
+	margin: 0 0 0 1rem; 
 }
 ul.navigation{
 	margin: 0.8rem auto;
@@ -57,4 +139,51 @@ body{
 
 .container{
 	background: #fff !important;
+}
+
+.footer{
+	background: #006900 !important;
+	color: #fff !important;
+	margin: 0 -2% 0 -1.5%;
+	padding: 1% 2%;
+}
+
+.footer .side-nav li{
+	padding: 0;
+	margin: 0;
+}
+
+.footer p{
+	margin: 0;
+	font-size: 0.9em;
+}
+
+.footer p a{
+	color: #fff;
+}
+
+.footer p a:hover{
+	text-decoration: underline;
+}
+
+.footer h5{
+	margin-bottom: 0.5rem;
+	color: #fff !important;
+}
+
+.footer .side-nav li a{
+	color: #fff !important;
+	text-align: center;
+}
+
+.footer .side-nav li:first-child a{
+	font-weight: bold !important;
+}
+
+.footer .side-nav li:hover{
+	background: #aaa;
+}
+
+.footer .side-nav li a.active{
+	text-decoration: underline;
 }
