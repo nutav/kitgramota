@@ -43,6 +43,11 @@
         </div>  
       
   		<%= render_navigation context: :main %>
+        <% if current_admin %>
+          <p style="float: right;">Добро пожаловать, <strong><%= current_admin.login %></strong><br><%= link_to 'Выйти', destroy_admin_session_path, method: :delete %></p>
+        <% else %>
+              <p style="float: right;"><%= link_to 'Войти', new_admin_session_path %></p>
+        <% end %>
 
   		<%= yield %>
       <div class="footer">
