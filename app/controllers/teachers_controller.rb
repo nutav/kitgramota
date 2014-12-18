@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+	before_filter :authenticate_admin!, except: :laoshi
 	load_resource class: 'Teacher'
 
 	def index
