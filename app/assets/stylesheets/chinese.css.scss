@@ -181,9 +181,21 @@ body{
 }
 
 .footer .side-nav li:hover{
-	background: #aaa;
+	background: #97cc86;
 }
 
 .footer .side-nav li a.active{
 	text-decoration: underline;
+}
+
+ul.navigation li.admin_item a{
+  color: #771010 !important;
+}
+
+ul.navigation li.admin_item a:hover{
+  color: #a71010 !important;
+}
+
+ul.navigation li.admin_item a.active{
+  color: #fff !important;
 }
