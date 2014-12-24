@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  # before_filter :authenticate_admin!, except: :index
+  before_filter :authenticate_admin!
   load_resource class: 'Admin'
 
   def index
@@ -9,13 +9,13 @@ class AdminsController < ApplicationController
   end
 
   def create
-    raise resource_params.inspect
-    @admin = Admin.create(resource_params)
-    if @admin.save!
-      redirect_to admins_path, notice: "Администратор #{@admin.login} был успешно создан"
-    else
-      render action: :new 
-    end  
+    # raise resource_params.inspect
+    # @admin = Admin.create(resource_params)
+    # if @admin.save!
+    #   redirect_to admins_path, notice: "Администратор #{@admin.login} был успешно создан"
+    # else
+    #   render action: :new
+    # end
   end
 
   def edit

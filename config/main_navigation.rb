@@ -19,6 +19,7 @@ SimpleNavigation::Configuration.run do |navigation|
       primary.item :prices_a, 'Цены (а)', all_prices_path, highlights_on: -> {params[:controller]=='prices' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
       primary.item :teachers, 'Преподаватели (а)', teachers_path, highlights_on: -> {params[:controller]=='teachers' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
       primary.item :albums, 'Фотографии (а)', albums_path, highlights_on: -> {params[:controller]=='albums' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
+      primary.item :albums, 'Администраторы (а)', admins_path, highlights_on: -> { params[:controller]=='admins' }, class: 'admin_item'
     end
   end
 end

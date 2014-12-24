@@ -1,4 +1,5 @@
 class Education::LevelsController < ApplicationController
+  before_filter :authenticate_admin!, except: [:courses, :show]
   load_resource class: 'Education::Level'
 
   def index

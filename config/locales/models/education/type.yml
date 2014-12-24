@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+     type: 'тип'
+    attributes:
+      type:
+        name: 'название'
+        hours: 'количество академических часов'

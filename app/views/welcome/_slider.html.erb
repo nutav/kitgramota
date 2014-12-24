@@ -1,7 +1,7 @@
 <div class="flexslider slider">
   <ul class="slides">
     <% Photo.all.each do |photo| %>
-    <li><div style="background-image: url(<%= photo.picture.url %>); background-size: cover; height: 120px;"><div>
+    <li><div style="background-image: url(<%= photo.picture.url %>); background-size: cover; height: 120px;"></div></li>
     <% end %> 
   </ul>
 </div>

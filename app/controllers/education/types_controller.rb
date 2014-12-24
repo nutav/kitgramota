@@ -1,5 +1,6 @@
 class Education::TypesController < ApplicationController
-  # load_and_authorize_resource class: 'New'
+  before_filter :authenticate_admin!
+  # load_and_authorize_resource
 
   def index
     @types = Education::Type.all

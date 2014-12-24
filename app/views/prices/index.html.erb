@@ -1,7 +1,7 @@
 <h1>Цены</h1>
 
-<%= link_to new_price_path, class: 'button' do %>
-    <span class="glyphicons-icon hospital"></span> Создать новую ценовую категорию
+<%= link_to new_price_path, class: 'button info' do %>
+    <i class="fi-plus"></i> Создать новую ценовую категорию
 <% end %>
 
 <% if @prices.any? %>
@@ -27,11 +27,11 @@
         <td><%= price.saturday? ? 'да' : '' %></td>
         <td><%= price.individual? ? 'да' : '' %></td>
         <td>
-          <%= link_to edit_price_path(price), class: 'button', title: 'Редактировать' do %>
-            <span class="glyphicons pen"></span>
+          <%= link_to edit_price_path(price), class: 'button tiny', title: 'Редактировать' do %>
+              <i class="fi-pencil"></i>
           <% end %>
-          <%= link_to price_path(price), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-            <span class="glyphicon glyphicon-remove"></span>
+          <%= link_to price_path(price), method: :delete, class: 'button alert tiny', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+              <i class="fi-x"></i>
           <% end %>
         </td>
       </tr> 
@@ -39,5 +39,5 @@
   </tbody>
 </table>
 <% else %>
-  <p>Пока не было создано ни одного альбома</p>
+  <p>Пока не было добавлено ни одной ценовой категории</p>
 <% end %>

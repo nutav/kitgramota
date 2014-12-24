@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_filter :authenticate_admin!, except: [:index, :show]
+	before_filter :authenticate_admin!, except: [:publications, :show]
 	load_resource
 
 	def index

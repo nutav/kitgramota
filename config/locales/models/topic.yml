@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+     topic: 'заявка'
+    attributes:
+      topic:
+        name: 'название'
+        description: 'текст'
+        status: 'статус'

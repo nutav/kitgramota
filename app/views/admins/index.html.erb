@@ -14,11 +14,11 @@
       <td><%= admin.id %></td>
       <td><%= admin.login %></td>
       <td>
-        <%= link_to edit_admin_path(admin), title: 'Редактировать', class: 'button' do %>
+        <%= link_to edit_admin_path(admin), title: 'Редактировать', class: 'button tiny' do %>
             <i class="fi-pencil"></i>
         <% end %>
-        <%= link_to admin_path(admin), title: 'Удалить', method: :delete, data: { confirm: 'Вы уверены?' },
-                       class: 'btn btn-danger' do %>
+        <%= link_to admin_path(admin), title: 'Удалить', method: :delete, data: { confirm: "Вы уверены, что хотите удалить администратора с именем пользователя #{admin.login}?" },
+                       class: 'button alert tiny' do %>
             <i class="fi-x"></i>
         <% end %>
       </td>

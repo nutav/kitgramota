@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+     price: 'цена'
+    attributes:
+      price:
+        level: 'курс'
+        type: 'тип'
+        sum: 'сумма'
+        saturday: 'занятие в субботу'
+        individual: 'индивидуальное занятие'

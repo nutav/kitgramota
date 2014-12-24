@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+     teacher: 'заявка'
+    attributes:
+      teacher:
+        last_name: 'фамилия'
+        first_name: 'имя'
+        patronym: 'отчество'
+        education: 'образование'
+        probation: 'стажировка'
+        years: 'опыт'
+        speciality: 'специализация'
+        avatar: 'фотография'

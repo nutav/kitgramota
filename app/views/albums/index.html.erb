@@ -1,7 +1,7 @@
 <h1>Альбомы</h1>
 
-<%= link_to new_album_path, class: 'button small' do %>
-  	<span class="glyphicons-icon hospital"></span> Создать новый альбом
+<%= link_to new_album_path, class: 'button small info' do %>
+    <i class="fi-plus"></i> Создать новый альбом
 <% end %>
 
 <% if @albums.any? %>
@@ -29,12 +29,12 @@
   	    </td>
   	    <td><%= album.photos.length %></td>
   	    <td>
-  	    	<%= link_to edit_album_path(album), class: 'button', title: 'Редактировать' do %>
-  	    		<span class="glyphicons pen"></span>
-  	    	<% end %>
-  	    	<%= link_to album_path(album), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-	          <span class="glyphicon glyphicon-remove"></span>
-	        <% end %>
+          <%= link_to edit_album_path(album), class: 'button tiny', title: 'Редактировать' do %>
+            <i class="fi-photo"></i>
+          <% end %>
+          <%= link_to album_path(album), method: :delete, class: 'button alert tiny', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+            <i class="fi-x"></i>
+          <% end %>
   	    </td>
   	  </tr>	
   	<% end %>

@@ -1,7 +1,7 @@
 <h1>Преподаватели</h1>
 
-<%= link_to new_teacher_path, class: 'button' do %>
-    <span class="glyphicons-icon hospital"></span> Создать нового преподавателя
+<%= link_to new_teacher_path, class: 'button small info' do %>
+    <i class="fi-plus"></i> Создать нового преподавателя
 <% end %>
 
 <% if @teachers.any? %>
@@ -29,11 +29,11 @@
         <td><%= teacher.speciality %></td>
         <td><%= teacher.years %> <%= Russian::p(teacher.years,'год','года','лет') %></td>
         <td>
-          <%= link_to edit_teacher_path(teacher), class: 'button', title: 'Редактировать' do %>
-            <span class="glyphicons pen"></span>
+          <%= link_to edit_teacher_path(teacher), class: 'button tiny', title: 'Редактировать' do %>
+              <i class="fi-pencil"></i>
           <% end %>
-          <%= link_to teacher_path(teacher), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-            <span class="glyphicon glyphicon-remove"></span>
+          <%= link_to teacher_path(teacher), method: :delete, class: 'button alert tiny', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+              <i class="fi-x"></i>
           <% end %>
         </td>
       </tr> 

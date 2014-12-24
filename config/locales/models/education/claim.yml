@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+     claim: 'заявка'
+    attributes:
+      claim:
+        name: 'имя'
+        phone: 'номер телефона'
+        email: 'электронная почта'
+        comment: 'комментарий к заявке'

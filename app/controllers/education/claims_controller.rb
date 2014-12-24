@@ -1,4 +1,5 @@
 class Education::ClaimsController < ApplicationController
+  before_filter :authenticate_admin!, except: :create
   load_resource class: 'Education::Claim'
 
   def index

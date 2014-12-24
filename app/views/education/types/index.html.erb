@@ -1,7 +1,7 @@
 <h1>Типы курсов</h1>
 
-<%= link_to new_education_type_path, class: 'button small' do %>
-    <span class="glyphicons-icon hospital"></span> Создать новый тип
+<%= link_to new_education_type_path, class: 'button small info' do %>
+    <i class="fi-plus"></i> Создать новый тип
 <% end %>
 
 <table>
@@ -20,11 +20,11 @@
           <td><%= type.name %></td>
           <td><%= type.hours %></td>
           <td>
-            <%= link_to edit_education_type_path(type), class: 'button', title: 'Редактировать' do %>
-              <span class="glyphicons pen"></span>
+            <%= link_to edit_education_type_path(type), class: 'button tiny', title: 'Редактировать' do %>
+                <i class="fi-pencil"></i>
             <% end %>
-            <%= link_to education_type_path(type), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-              <span class="glyphicon glyphicon-remove"></span>
+            <%= link_to education_type_path(type), method: :delete, class: 'button alert tiny', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+                <i class="fi-x"></i>
             <% end %>
           </td>
       </tr>

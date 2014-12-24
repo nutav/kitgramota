@@ -1,7 +1,7 @@
 <h1>Статьи</h1>
 
-<%= link_to new_article_path, class: 'button small' do %>
-    <span class="glyphicons-icon hospital"></span> Создать новую статью
+<%= link_to new_article_path, class: 'button small info' do %>
+    <i class="fi-plus"></i> Создать новую статью
 <% end %>
 
 <% if @articles.any? %>

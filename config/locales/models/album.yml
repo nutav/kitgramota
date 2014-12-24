@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+     album: 'альбом'
+    attributes:
+      album:
+        name: 'название'
+        description: 'описание'

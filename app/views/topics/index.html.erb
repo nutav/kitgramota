@@ -1,7 +1,7 @@
 <h1>Новости</h1>
 
-<%= link_to new_topic_path, class: 'button' do %>
-    <span class="glyphicons-icon hospital"></span> Создать новость
+<%= link_to new_topic_path, class: 'button small info' do %>
+    <i class="fi-plus"></i> Создать новость
 <% end %>
 
 <table>
@@ -23,11 +23,11 @@
   			</td>
         <td><%= n.status_name %></td>
         <td>
-          <%= link_to edit_topic_path(n), class: 'button', title: 'Редактировать' do %>
-            <span class="glyphicons pen"></span>
+          <%= link_to edit_topic_path(n), class: 'button tiny', title: 'Редактировать' do %>
+              <i class="fi-pencil"></i>
           <% end %>
-          <%= link_to topic_path(n), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-            <span class="glyphicon glyphicon-remove"></span>
+          <%= link_to topic_path(n), method: :delete, class: 'button alert tiny', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+              <i class="fi-x"></i>
           <% end %>
         </td>
   		</tr>

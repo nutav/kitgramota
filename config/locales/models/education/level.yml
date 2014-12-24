@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+     level: 'курс'
+    attributes:
+      level:
+        name: 'название'
+        description: 'описание'
