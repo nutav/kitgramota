@@ -25,7 +25,13 @@ class Education::LevelsController < ApplicationController
   end
 
   def update
-    @level = Education::Level.update(params[:id])
+    @level = Education::Level.find(params[:id])
+    @level.update(resource_params)
+    if @level.save
+      redirect_to education_levels_path
+    else
+      render action: :edit
+    end
   end
 
   def destroy

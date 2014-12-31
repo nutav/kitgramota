@@ -1,7 +1,7 @@
 <h1>Курсы</h1>
 
 <%= link_to 'Создать новый курс', new_education_level_path, class: 'button small info' %>
-<%= link_to 'Заявки на курсы', education_claims_path, class: 'button success small' %>
+<%= link_to 'Заявки на курсы', education_claims_path, class: 'button small', style: 'background-color: #97cc86;' %>
 
 <table>
     <thead>
@@ -19,11 +19,11 @@
               <h3><%= level.name %></h3>
               <div><%= raw level.description %></div>
           </td>
-          <td><%= link_to edit_education_level_path(level), class: 'button', title: 'Редактировать' do %>
-              <span class="glyphicons pen"></span>
+          <td><%= link_to edit_education_level_path(level), class: 'tiny button', title: 'Редактировать' do %>
+                <i class="fi-pencil"></i>
             <% end %>
-            <%= link_to education_level_path(level), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-              <span class="glyphicon glyphicon-remove"></span>
+            <%= link_to education_level_path(level), method: :delete, class: 'button tiny alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+                <i class="fi-x"></i>
             <% end %>
           </td>
       </tr>

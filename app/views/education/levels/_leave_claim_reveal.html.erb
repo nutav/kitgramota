@@ -2,14 +2,14 @@
     <h2>Курс "<%= level.name %>"</h2>
     <%= form_for claim do |f| %>
     <%= f.hidden_field :education_level_id, value: level.id %>
-    <%= f.label :name %>
+    <%= f.label :name, 'Ваше имя' %>
     <%= f.text_field :name, required: true, placeholder: '' %>
-    <%= f.label :phone %>
+    <%= f.label :phone, 'Телефон' %>
     <%= f.text_field :phone, placeholder: '' %>
-    <%= f.label :email %>
+    <%= f.label :email, 'Электронная почта' %>
     <%= f.email_field :email %>
     <%= f.hidden_field :status, value: :never_saw %>
-    <%= f.label :comment %>
+    <%= f.label :comment, 'Комментарий' %>
     <%= f.text_area :comment, rows: 3 %>
     <br>
     <%= f.submit 'Оставить заявку', class: 'button' %>

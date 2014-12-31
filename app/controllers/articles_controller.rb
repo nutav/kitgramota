@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def publications
-		@articles = @articles.order('id DESC')
+		@articles = Article.all.order('id DESC')
 	end
 	
 	def new 

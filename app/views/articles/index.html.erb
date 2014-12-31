@@ -21,11 +21,11 @@
         <td><%= article.name %></td>
         <td><%= article.status_name %></td>
         <td>
-          <%= link_to edit_article_path(article), class: 'button', title: 'Редактировать' do %>
-            <span class="glyphicons pen"></span>
+          <%= link_to edit_article_path(article), class: 'tiny button', title: 'Редактировать' do %>
+              <i class="fi-pencil"></i>
           <% end %>
-          <%= link_to article_path(article), method: :delete, class: 'button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
-          <span class="glyphicon glyphicon-remove"></span>
+          <%= link_to article_path(article), method: :delete, class: 'tiny button alert', title: 'Удалить', data: {confirm: 'Вы уверены?'} do %>
+              <i class="fi-x"></i>
         <% end %>
         </td>
       </tr> 

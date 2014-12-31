@@ -1,12 +1,14 @@
 class PricesController < ApplicationController
   before_filter :authenticate_admin!, except: :actual
   load_and_authorize_resource class: 'Price', except: :actual
-  load_resource class: 'Price', only: :index
+  load_resource class: 'Price', only: :actual
 
   def index
+    @prices = Price.all
   end
 
   def actual
+    @prices = Price.all
   end
 
   def new

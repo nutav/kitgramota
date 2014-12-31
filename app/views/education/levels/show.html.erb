@@ -7,7 +7,7 @@
 		<div class="alert-box alert radius"><%= flash[:notice] %></div>
 	<% end %>	
 	<div class="alert-box radius">Вы можете оставить заявку на данный курс, и мы с вами свяжемся.
-	    <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" }, class: 'open-reveal button tiny success radius', style: 'float: right; margin-top: -0.5%' %>
+	    <%= link_to 'Оставить заявку', '#', data: {:'reveal-id' => "leaveClaim#{@level.id}" }, class: 'open-reveal button tiny radius', style: 'background-color: #97cc86; float: right; margin-top: -0.5%' %>
 	  </div>
   	<%= render partial: 'leave_claim_reveal', locals: {level: @level, claim: Education::Claim.new} %>
 <% end %>  

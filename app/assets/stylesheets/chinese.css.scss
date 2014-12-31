@@ -142,7 +142,7 @@ body{
 }
 
 .footer{
-	background: #006900 !important;
+	background: #446944 !important;
 	color: #fff !important;
 	margin: 0 -2% 0 -1.5%;
 	padding: 1% 2%;
@@ -198,4 +198,13 @@ ul.navigation li.admin_item a:hover{
 
 ul.navigation li.admin_item a.active{
   color: #fff !important;
+}
+
+.flex-control-nav {
+  margin: 25px auto 20px auto !important;
+  bottom: -50px !important;
+}
+
+.slider {
+  margin-bottom: 30px !important;
 }
