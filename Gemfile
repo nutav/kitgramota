@@ -31,13 +31,16 @@ gem 'russian'
 group :development do
 	gem 'better_errors'
 	gem 'spring'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
 end	
 
 # gem 'foundation-rails'
 gem 'simple-navigation'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'nested_form'
-gem 'russian'
 gem 'stringex'
 gem 'devise'
 gem 'cancan'
