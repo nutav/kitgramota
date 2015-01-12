@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'therubyracer', platforms: :ruby
 gem 'russian'
+gem 'dotenv-deployment'
 
 group :development do
 	gem 'better_errors'
@@ -35,6 +36,8 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
+  
+  gem 'dotenv-rails'
 end	
 
 # gem 'foundation-rails'
