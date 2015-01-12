@@ -47,4 +47,5 @@ production:
   database: kitgramota_production
   pool: 5
   username: postgres
+  host: localhost
   password: <%= ENV['DATABASE_PASSWORD'] %>
