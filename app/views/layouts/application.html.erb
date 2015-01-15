@@ -45,8 +45,6 @@
   		<%= render_navigation context: :main %>
         <% if current_admin %>
           <p style="float: right;">Добро пожаловать, <strong><%= current_admin.login %></strong><br><%= link_to 'Выйти', destroy_admin_session_path, method: :delete %></p>
-        <% else %>
-              <p style="float: right;"><%= link_to 'Войти', new_admin_session_path %></p>
         <% end %>
 
   		<%= yield %>
@@ -66,16 +64,11 @@
           </div>
         </div>
         <div class="row">
-          <p class="text-center">Китайская грамота — курсы китайского языка | All rights reserved. 2014 ©</p>
+          <p class="text-center">Китайская грамота — курсы китайского языка | All rights reserved. 2015 ©</p>
         </div>
       </div>
   		</div>
   	</div>
-    <div class="row">
-      <%= link_to new_admin_session_path, title: 'Войти' do %>
-            <span class="glyphicon-icon user"></span>
-      <% end %>
-    </div>
     <a class="exit-off-canvas"></a>
   </div>
   </div>  

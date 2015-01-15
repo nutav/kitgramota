@@ -6,7 +6,7 @@ class AlbumsController < ApplicationController
   end
   
   def gallery
-    @albums = @albums.with_photos
+    @albums = Album.all.with_photos
   end
 
   def new

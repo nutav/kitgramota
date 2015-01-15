@@ -6,7 +6,7 @@ class TeachersController < ApplicationController
 	end
 
 	def laoshi
-		@teachers = Teacher.all
+		@teachers = Teacher.order(:id)
 	end
 	
 	def new 
