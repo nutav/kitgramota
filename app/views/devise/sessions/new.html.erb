@@ -6,7 +6,7 @@
 
 <%= form_for(resource, as: resource_name, url: admin_session_path) do |f| %>
   <div><%= f.label :login, 'Логин' %><br />
-  <%= f.email_field :login, autofocus: true %></div>
+  <%= f.text_field :login, autofocus: true %></div>
 
   <div><%= f.label :password, 'Пароль' %><br />
     <%= f.password_field :password, autocomplete: 'off' %></div>
