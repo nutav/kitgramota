@@ -16,6 +16,7 @@ PATH
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.8)
       actionpack (= 4.1.8)
