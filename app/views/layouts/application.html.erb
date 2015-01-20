@@ -22,7 +22,7 @@
 <body>
   <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
-    <a class="right-off-canvas-toggle small button radius" style="position: absolute; right: 5px; top: -3px; z-index: 2" href="#" >Записаться</a>
+    <a class="right-off-canvas-toggle small button radius" style="position: fixed; right: 5px; top: -3px; z-index: 2" href="#" id="open-aside" >Записаться</a>
     <aside class="right-off-canvas-menu" style="background: #eee;">
       <%= render partial: 'education/claims/leave', locals: {claim: Education::Claim.new} %>    
     </aside>
