@@ -135,6 +135,7 @@ h1{
 
 body{
 	background: url(/images/fon_kit.jpg) !important;
+	margin: 0;
 }
 
 .container{
@@ -207,4 +208,8 @@ ul.navigation li.admin_item a.active{
 
 .slider {
   margin-bottom: 30px !important;
+}
+
+.redactor_editor {
+	height: 15rem;
 }

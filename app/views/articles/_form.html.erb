@@ -12,6 +12,16 @@
       <div>
         <%= f.text_area :text, rows: 10, class: 'rich-text-redactor' %>
       </div>
+			<script type="text/javascript">
+		  $('.rich-text-redactor').redactor({
+		    lang: 'ru',
+		    buttons: ['formatting',  '|', 'table', '|', 'bold', 'italic', 'underline', '|',
+		              'alignleft', 'aligncenter', 'alignright', 'justify', '|',
+		              'orderedlist', 'unorderedlist', 'outdent', 'indent', '|',
+		              'image', 'link'],
+		    convertVideoLinks: true
+		  });
+			</script>
     </div>
   </div>
 
@@ -31,13 +41,3 @@
    <%= f.submit 'Сохранить', class: 'button small' %> или <%= link_to 'Отмена', articles_path, class: 'button small secondary' %>
   </div>
 <% end %>
-<script type="text/javascript">
-  $('.rich-text-redactor').redactor({
-    lang: 'ru',
-    buttons: ['formatting',  '|', 'table', '|', 'bold', 'italic', 'underline', '|',
-              'alignleft', 'aligncenter', 'alignright', 'justify', '|',
-              'orderedlist', 'unorderedlist', 'outdent', 'indent', '|',
-              'image', 'link'],
-    convertVideoLinks: true
-  });
-</script>
