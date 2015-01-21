@@ -71,7 +71,11 @@
   <div>
     <%= f.label :avatar %>
     <div>
+      <% if f.object.avatar.url != '/images/original/missing.png' %>
+        <%= image_tag f.object.avatar.url(:medium) %>
+      <% else %>
         <%= f.file_field :avatar %>
+      <% end %>
     </div>
   </div>
 

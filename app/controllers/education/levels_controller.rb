@@ -14,6 +14,11 @@ class Education::LevelsController < ApplicationController
 
   def create
     @level = Education::Level.create(resource_params)
+		if @level.save!
+			redirect_to levels_path
+		else
+			render action: :new
+		end	
   end
 
   def show
@@ -36,6 +41,8 @@ class Education::LevelsController < ApplicationController
 
   def destroy
     @level = Education::Level.find(params[:id])
+		@level .destroy!
+		redirect_to education_levels_path
   end
 
   def resource_params
