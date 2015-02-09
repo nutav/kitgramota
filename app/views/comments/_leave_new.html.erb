@@ -1,0 +1,13 @@
+<div id="leaveComment" class="reveal-modal" data-reveal>
+  <h2>Оставьте свой отзыв</h2>
+  <%= form_for comment do |f| %>
+      <%= f.label :name, 'Ваше имя' %>
+      <%= f.text_field :name, placeholder: '' %>
+      <div class="raty-div"></div>
+      <%= f.label :text, 'Ваш отзыв' %>
+      <%= f.text_area :text, rows: 4, required: true %>
+      <br>
+      <%= f.submit 'Оставить отзыв', class: 'button' %>
+  <% end %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

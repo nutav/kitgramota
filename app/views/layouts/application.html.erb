@@ -2,19 +2,9 @@
 <html>
 <head>
   <title>Китайская грамота</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'vendor/modernizr' %>
-	<%= javascript_include_tag 'redactor/redactor' %>
-	<%= javascript_include_tag 'redactor/ru' %>
-  <% javascript_include_tag 'vendor_foundation/afondation' %>
-  <% javascript_include_tag 'vendor_foundation/accordion' %>
-  <% javascript_include_tag 'vendor_foundation/alert' %>
-  <% javascript_include_tag 'vendor_foundation/reveal' %>
-  <% javascript_include_tag 'vendor_foundation/tab' %>
-  <% javascript_include_tag 'vendor_foundation/topbar' %>
-  <% javascript_include_tag 'vendor_foundation/my_fond' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
@@ -27,6 +17,8 @@
       <%= render partial: 'education/claims/leave', locals: {claim: Education::Claim.new} %>    
     </aside>
   	<div class="row container">
+      <%= link_to 'Оставить отзыв', '#', data: {:'reveal-id' => 'leaveComment' }, class: 'open-reveal button tiny radius', style: 'background-color: #97cc86; position: fixed; bottom: -15px; right: 5px; z-index: 50' %>
+      <%= render partial: 'comments/leave_new', locals: {comment: Comment.new} %>
   		<div class="columns middle-12 small-12 large-12 small-centered">
         <div class="logo_h" style="position:relative;">
           <p class="china-text" style=" position:absolute; top:5%; left:0;"><a href="<%= root_path %>">Китайская грамота<br><small style="color: #a71010; font-size: 0.7em !important;">курсы китайского языка</small></a></p>

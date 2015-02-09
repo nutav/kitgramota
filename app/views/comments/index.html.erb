@@ -1,0 +1,32 @@
+<h1>Отзывы</h1>
+
+<table style="width: 100%">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Имя</th>
+    <th>Текст</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @comments.each_with_index do |comment, i| %>
+      <tr style="<%= 'background-color: #ddf0dd;' if comment.accepted? %>">
+        <td><%= i+1 %></td>
+        <td><%= comment.author %></td>
+        <td>
+					<div class="raty-div-readonly" data-score="<%= comment.raty %>"></div>
+					<%= comment.text %></td>
+				<td>
+					<% unless comment.accepted? %>
+				    <%= form_for comment, url: comment_path(comment), style: 'margin: 0' do |f| %>
+				      <%= f.hidden_field :status, value: :accepted %>
+				      <button style="margin: 0" type="submit" class="button tiny expand">Опубликовать</button>
+				    <% end %>
+				  <% end %>
+				  <%= link_to 'Удалить', comment_path(comment), method: :delete, class: 'button tiny alert expand', data: {confirm: 'Вы уверены?'}, style: 'margin: 0'%>
+				</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

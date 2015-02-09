@@ -12,6 +12,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :laoshi, 'Лаоши', laoshi_path
     primary.item :prices, 'Цены', prices_path
     primary.item :contacts, 'Контакты', contacts_path
+    primary.item :contacts, 'Отзывы', last_comments_path, highlights_on: -> {params[:controller]=='comments' && params[:action]=='last'}
     primary.item :partners, 'Партнёры', partners_path
     if admin_signed_in?
       primary.item :topics, 'Новости (а)', topics_path, highlights_on: -> {params[:controller]=='topics' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
@@ -22,6 +23,7 @@ SimpleNavigation::Configuration.run do |navigation|
       primary.item :teachers, 'Преподаватели (а)', teachers_path, highlights_on: -> {params[:controller]=='teachers' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
       primary.item :albums, 'Фотографии (а)', albums_path, highlights_on: -> {params[:controller]=='albums' && (params[:action]=='index' || params[:action]=='edit' || params[:action]=='new')}, class: 'admin_item'
       primary.item :albums, 'Администраторы (а)', admins_path, highlights_on: -> { params[:controller]=='admins' }, class: 'admin_item'
+      primary.item :contacts_a, 'Отзывы (а)', comments_path, highlights_on: -> {params[:controller]=='comments' && params[:action]=='index'}, class: 'admin_item'
     end
   end
 end

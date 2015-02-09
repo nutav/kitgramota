@@ -38,6 +38,10 @@ Rails.application.routes.draw do
     resources :photos
   end
 
+  resources :comments do
+    get 'last', on: :collection
+  end
+
 
   namespace :education do
     resources :levels 

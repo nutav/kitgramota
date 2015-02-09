@@ -10,10 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require libs/modernizr
+//= require jquery2
 //= require jquery_ujs
-//= require turbolinks
+//= require libs/jquery.cookie
 //= require jquery_nested_form
+//= require raty/lib/jquery.raty.js
+//= require comments
 //
 //= require redactor/redactor
 //= require redactor/ru

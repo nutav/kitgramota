@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Recordbun
 # gem 'mysql2', group: [:development, :test]
 # Use SCSS for stylesheets
@@ -18,12 +18,6 @@ gem 'foundation-icons-sass-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-validation-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'therubyracer', platforms: :ruby
 gem 'russian'
@@ -61,6 +55,9 @@ gem 'pg'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'translit', path: 'translit'
+# gem 'translit', path: 'translit'
 gem 'cancancan', '~> 1.9'
 gem 'rails_12factor', group: :production
+
+
+gem 'rails-assets-raty'

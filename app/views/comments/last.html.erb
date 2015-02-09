@@ -1,0 +1,10 @@
+<h1>Отзывы</h1>
+
+<% @comments.each do |comment| %>
+    <h3><%= comment.author %> <small><%= l comment.created_at, format: '%d %B %Y, %H:%M' %></small></h3>
+		<% if comment.raty %>
+		<div class="raty-div-readonly" data-score="<%= comment.raty %>"></div>
+		<% end %>
+    <blockquote style="color: #444"><%= comment.text %></blockquote>
+    <br>
+<% end %>
