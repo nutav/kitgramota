@@ -8,7 +8,8 @@ class Education::ClaimsController < ApplicationController
   def create
     @claim = Education::Claim.create(resource_params)
     if @claim.save!
-      redirect_to education_level_path(@claim.level), 
+      AppMailer.claim_email(@claim).deliver_later
+      redirect_to @claim.level ? education_level_path(@claim.level) : root_path, 
       notice: 'Спасибо за Вашу заявку! Мы обязательно с Вами свяжемся в ближайшее время.'
     else
       redirect_to education_level_path(params[:education_claim][:education_level_id]), 

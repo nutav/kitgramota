@@ -1,0 +1,12 @@
+Поступила новая заявка
+======================
+
+Имя: <%= @claim.name %>
+Телефон: <%= @claim.phone %>
+Эл. почта: <%= @claim.email %>
+Курс: <%= @claim.level ? @claim.level.name : 'не определился' %>
+<% if @claim.comment %>
+Комментарий: <%= @claim.comment %>
+<% end %>
+
+Чтобы посмотреть другие заявки, пройдите по адресу - <%= education_claims_url host: 'kit-gramota.ru' %>

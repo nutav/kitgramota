@@ -30,7 +30,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
-  
+  gem 'letter_opener'
   gem 'dotenv-rails'
 end	
 
