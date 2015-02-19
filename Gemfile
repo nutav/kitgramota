@@ -42,6 +42,7 @@ gem 'stringex'
 gem 'devise'
 gem 'cancan'
 gem 'binding_of_caller'
+gem 'mandrill-api'
 # gem 'rails-gallery'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
