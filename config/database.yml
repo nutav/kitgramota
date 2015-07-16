@@ -46,6 +46,6 @@ production:
   encoding: utf8
   database: kitgramota_production
   pool: 5
-  username: postgres
+  username: user
   host: localhost
   password: <%= ENV['DATABASE_PASSWORD'] %>
