@@ -4,8 +4,8 @@ ru:
      price: 'цена'
     attributes:
       price:
-        level: 'курс'
-        type: 'тип'
+        education_level_id: 'курс'
+        education_type_id: 'тип'
         sum: 'сумма'
         saturday: 'занятие в субботу'
         individual: 'индивидуальное занятие'

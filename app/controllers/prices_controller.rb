@@ -17,6 +17,12 @@ class PricesController < ApplicationController
 
   def create
     @price = Price.create(resource_params)
+    
+    if @price.save!
+      redirect_to prices_path
+    else
+      render action: :new 
+    end 
   end
 
   def edit
@@ -25,10 +31,17 @@ class PricesController < ApplicationController
 
   def update
     @price = Price.update(resource_params)
+    
+    if @price.save!
+      redirect_to prices_path
+    else
+      render action: :new 
+    end 
   end
 
   def destroy
     @price = Price.find(params[:id])
+    @price.destroy
   end
 
   def resource_params
