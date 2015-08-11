@@ -30,7 +30,7 @@ class PricesController < ApplicationController
   end
 
   def update
-    @price = Price.update(resource_params)
+    @price = Price.find(params[:id]).update(resource_params)
     
     if @price.save!
       redirect_to prices_path
