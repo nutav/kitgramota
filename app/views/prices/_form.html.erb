@@ -1,21 +1,19 @@
 <%= form_for @price, url: url do |f| %>
  <div>
-      <%= f.label :education_level_id, class: '' do %>
+      <%= f.label :education_level_id, class: '' %>
       <div class="">
           <%= f.select :education_level_id, 
           options_from_collection_for_select(Education::Level.all, :id, :name, f.object.education_level_id), 
           class: '' %>
       </div>
-      <% end %>
   </div>
   <div>
-      <%= f.label :education_type_id, class: '' do %>
+      <%= f.label :education_type_id, class: '' %>
       <div class="">
           <%= f.select :education_type_id, 
           options_from_collection_for_select(Education::Type.all, :id, :name, f.object.education_type_id), 
           class: '' %>
       </div>
-      <% end %>
   </div>
   <div>
       <%= f.label :sum, class: '' %>
@@ -24,18 +22,16 @@
       </div>
   </div>
   <div>
-      <%= f.label :saturday, class: '' do %>
+      <%= f.label :saturday, class: '' %>
       <div class="">
           <%= f.check_box :saturday, class: '' %>
       </div>
-      <% end %>
   </div>
    <div>
-      <%= f.label :individual, class: '' do %>
+      <%= f.label :individual, class: '' %>
       <div class="">
           <%= f.check_box :individual, class: '' %>
       </div>
-      <% end %>
   </div>
   <br>
   <div>

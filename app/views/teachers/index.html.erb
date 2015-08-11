@@ -9,7 +9,6 @@
   <thead>
     <tr>
       <th>#</th>
-      <th></th>
       <th>Имя</th>
       <th>Образование</th>
       <th>Стажировка</th>
@@ -22,8 +21,7 @@
     <% @teachers.each do |teacher| %>
       <tr>
         <td><%= teacher.id %></td>
-        <td><%= image_tag teacher.avatar.url, style: 'max-width: 100% !important' %></td>
-        <td><%= teacher.full_name %></td>
+        <td><%= teacher.full_name %> <br> <%= image_tag teacher.avatar.url, style: 'max-width: 100% !important' %></td>
         <td><%= teacher.education %></td>
         <td><%= teacher.probation %></td>
         <td><%= teacher.speciality %></td>
