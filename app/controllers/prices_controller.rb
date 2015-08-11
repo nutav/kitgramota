@@ -4,11 +4,11 @@ class PricesController < ApplicationController
   load_resource class: 'Price', only: :actual
 
   def index
-    @prices = Price.all
+    @prices = Price.all.order(:id)
   end
 
   def actual
-    @prices = Price.all
+    @prices = Price.all.order(:id)
   end
 
   def new
