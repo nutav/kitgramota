@@ -19,7 +19,7 @@ class PricesController < ApplicationController
     @price = Price.create(resource_params)
     
     if @price.save!
-      redirect_to prices_path
+      redirect_to all_prices_path
     else
       render action: :new 
     end 
@@ -30,10 +30,10 @@ class PricesController < ApplicationController
   end
 
   def update
-    @price = Price.find(params[:id]).update(resource_params)
+    @price.update(resource_params)
     
     if @price.save!
-      redirect_to prices_path
+      redirect_to all_prices_path
     else
       render action: :new 
     end 
