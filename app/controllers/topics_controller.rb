@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-	before_filter :authenticate_admin!, except: :news
+	before_filter :authenticate_admin!, except: [:news, :show]
 	load_resource
 
 	def index
