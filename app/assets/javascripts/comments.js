@@ -8,7 +8,7 @@ $(function(){
 			readOnly: true
 		});
 		
-	$('#new_education_claim').motioncaptcha({
+	$('#new_education_claim').motionCaptcha({
 		    errorMsg: 'Пожалуйста, попробуйте снова.',
 		    successMsg: 'Верно!'
 		});
