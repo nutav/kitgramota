@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'why_chinese/chinese_for_success', to: 'welcome#chinese_for_success'
   get 'why_we', to: 'welcome#why_we'
   get 'partners', to: 'welcome#partners'
+  get 'timetable', to: 'welcome#timetable'
   get 'news', to: 'topics#news'
   get 'laoshi', to: 'teachers#laoshi'
   get 'news/:id', to: 'topics#show'

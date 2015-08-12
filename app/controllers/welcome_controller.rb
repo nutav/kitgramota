@@ -28,5 +28,8 @@ class WelcomeController < ApplicationController
 	end	
 
 	def gallery
+	end
+  
+	def timetable
 	end	
 end

@@ -10,6 +10,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :courses, 'Курсы', courses_path, highlights_on: -> {params[:controller]=='education/levels' && (params[:action]=='courses' || params[:action]=='show')}
     primary.item :gallery, 'Галерея', gallery_path, highlights_on: -> {(params[:controller]=='albums' && params[:action]=='gallery') || params[:controller]=='photos'}
     primary.item :laoshi, 'Лаоши', laoshi_path
+    primary.item :laoshi, 'Расписание', timetable_path
     primary.item :prices, 'Цены', prices_path
     primary.item :contacts, 'Контакты', contacts_path
     primary.item :contacts, 'Отзывы', last_comments_path, highlights_on: -> {params[:controller]=='comments' && params[:action]=='last'}
