@@ -33,6 +33,15 @@
 #mc-canvas.star         { background-position:-400px -450px }
 #mc-canvas.pigtail      { background-position:-600px -450px }
 
+/* Red border when invalid */
+#mc-canvas.mc-invalid {
+	border: 4px solid #aa4444;
+}
+/* Green border when valid */
+#mc-canvas.mc-valid {
+	border: 4px solid #44aa44;
+}
+
 /* Disable mouse-selection on the page (only while user is actively drawing on the canvas): */
 .mc-noselect {
 	-webkit-user-select: none;
