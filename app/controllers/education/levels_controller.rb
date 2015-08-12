@@ -6,7 +6,7 @@ class Education::LevelsController < ApplicationController
   end
 
   def courses
-    @levels = Education::Level.all
+    @levels = Education::Level.all.order(:id)
   end
 
   def new
