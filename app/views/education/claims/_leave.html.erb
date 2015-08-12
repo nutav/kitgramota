@@ -1,6 +1,6 @@
 <div style="margin: 0 2%;" id="mc-div">
 <h2 class="text-center">Заявка</h2>
-<%= form_for claim do |f| %>
+<%= form_for claim, action: '#' do |f| %>
     <%= f.label :level, 'Курс' %>
     <%= f.select :education_level_id, 
           options_from_collection_for_select(Education::Level.all, :id, :name),prompt: 'не определился' %>

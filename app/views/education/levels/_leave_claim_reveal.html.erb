@@ -1,6 +1,6 @@
 <div id="leaveClaim<%= level.id %>" class="reveal-modal" data-reveal>
     <h2>Курс "<%= level.name %>"</h2>
-    <%= form_for claim do |f| %>
+    <%= form_for claim, action: '#' do |f| %>
     <%= f.hidden_field :education_level_id, value: level.id %>
     <%= f.label :name, 'Ваше имя' %>
     <%= f.text_field :name, required: true, placeholder: '' %>

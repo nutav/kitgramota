@@ -8,7 +8,7 @@
  */
 
 /* The canvas: */
-#mc-canvas {
+#mc-canvas, #mc-canvas-2 {
 	width:220px;  /* For best results, set width to between 210px and 240px */
 	height:154px; /* For best results, set height to between 140px and 170px */
 	background:#fff -9999px -9999px no-repeat;
@@ -32,6 +32,32 @@
 #mc-canvas.rightbrace   { background-position:-200px -450px }
 #mc-canvas.star         { background-position:-400px -450px }
 #mc-canvas.pigtail      { background-position:-600px -450px }
+
+/* Red border when invalid */
+#mc-canvas-2.mc-invalid {
+	border: 4px solid #aa4444;
+}
+/* Green border when valid */
+#mc-canvas-2.mc-valid {
+	border: 4px solid #44aa44;
+}
+
+#mc-canvas-2.triangle     { background-position:  10px   10px }
+#mc-canvas-2.x            { background-position:-200px   10px }
+#mc-canvas-2.rectangle    { background-position:-400px   10px }
+#mc-canvas-2.circle       { background-position:-600px   10px }
+#mc-canvas-2.check        { background-position:  10px -150px }
+#mc-canvas-2.caret        { background-position:-200px -150px }
+#mc-canvas-2.zigzag       { background-position:-400px -150px }
+#mc-canvas-2.arrow        { background-position:-600px -150px }
+#mc-canvas-2.leftbracket  { background-position:  10px -300px }
+#mc-canvas-2.rightbracket { background-position:-200px -300px }
+#mc-canvas-2.v            { background-position:-400px -300px }
+#mc-canvas-2.delete       { background-position:-600px -300px }
+#mc-canvas-2.leftbrace    { background-position:  10px -450px }
+#mc-canvas-2.rightbrace   { background-position:-200px -450px }
+#mc-canvas-2.star         { background-position:-400px -450px }
+#mc-canvas-2.pigtail      { background-position:-600px -450px }
 
 /* Red border when invalid */
 #mc-canvas.mc-invalid {
