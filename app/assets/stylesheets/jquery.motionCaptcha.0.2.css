@@ -35,7 +35,7 @@
 
 /* Disable mouse-selection on the page (only while user is actively drawing on the canvas): */
 .mc-noselect {
-	-webkit-user-select: none,
-	   -moz-user-select: none,
+	-webkit-user-select: none;
+	   -moz-user-select: none;
 	        user-select: none
 }
