@@ -7,4 +7,9 @@ $(function(){
 		  },
 			readOnly: true
 		});
+		
+	$('#new_education_claim').motioncaptcha({
+		    errorMsg: 'Пожалуйста, попробуйте снова.',
+		    successMsg: 'Верно!'
+		});
 })
