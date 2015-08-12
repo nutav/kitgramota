@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require libs/jquery.cookie
 //= require jquery_nested_form
+//= require captcha
 //= require raty/lib/jquery.raty.js
 //= require comments
 //

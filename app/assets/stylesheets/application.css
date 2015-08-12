@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require captcha
  *= require foundation-icons
  *= require raty/lib/jquery.raty.css
  */
