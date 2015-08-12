@@ -1,4 +1,4 @@
-<div style="margin: 0 2%;">
+<div style="margin: 0 2%;" id="mc-div">
 <h2 class="text-center">Заявка</h2>
 <%= form_for claim do |f| %>
     <%= f.label :level, 'Курс' %>
@@ -21,7 +21,17 @@
 	    <p>Чтобы отправить заявку, повторите рисунок:</p>
 	    <canvas id="mc-canvas"></canvas>
 	</div>
+	
+	<script type="text/javascript"ß>
+	$(function(){	
+		$('#mc-div .new_education_claim').motionCaptcha({
+			    errorMsg: 'Попробуйте снова',
+			    successMsg: 'Верно!',
+				shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
+		});
+	})
+	</script>
     <br>
-    <%= f.submit 'Оставить заявку', class: 'button alert expand' %>
+    <%= f.submit 'Оставить заявку', class: 'button alert expand mc-submit', disabled: true %>
 <% end %>
 </div>

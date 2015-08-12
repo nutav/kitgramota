@@ -19,13 +19,13 @@
 	    <canvas id="mc-canvas"></canvas>
 	</div>
     <br>
-    <%= f.submit 'Оставить заявку', class: 'button' %>
+    <%= f.submit 'Оставить заявку', class: 'button', disabled: true %>
     <% end %>
     <a class="close-reveal-modal">&#215;</a>
 	<script type="text/javascript"ß>
-	$(function(){		
-		$('#new_education_claim').motionCaptcha({
-			    errorMsg: 'Пожалуйста, попробуйте снова.',
+	$(function(){	
+		$('.reveal-modal .new_education_claim').motionCaptcha({
+			    errorMsg: 'Попробуйте снова.',
 			    successMsg: 'Верно!',
 				shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
 		});
