@@ -12,11 +12,11 @@
     <%= f.label :comment, 'Комментарий' %>
     <%= f.text_area :comment, rows: 3 %>
 	
-	<%= hidden_field_tag 'mc-action', request.original_url %>
+	<%= hidden_field_tag 'mc-action-2', request.original_url %>
 	
-	<div id="mc">
+	<div id="mc-2">
 	    <p>Чтобы отправить заявку, повторите рисунок:</p>
-	    <canvas id="mc-canvas"></canvas>
+	    <canvas id="mc-canvas-2"></canvas>
 	</div>
     <br>
     <%= f.submit 'Оставить заявку', class: 'button', disabled: true %>
@@ -25,6 +25,9 @@
 	<script type="text/javascript"ß>
 	$(function(){	
 		$('.reveal-modal .new_education_claim').motionCaptcha({
+				action: '#mc-action-2',        // the ID of the input containing the form action
+    			divId: '#mc-2',                // if you use an ID other than '#mc' for the placeholder, pass it in here
+    			canvasId: '#mc-canvas-2',      // the ID of the MotionCAPTCHA canvas element
 			    errorMsg: 'Попробуйте снова.',
 			    successMsg: 'Верно!',
 				shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
