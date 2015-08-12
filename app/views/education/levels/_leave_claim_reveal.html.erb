@@ -22,14 +22,14 @@
     <%= f.submit 'Оставить заявку', class: 'button' %>
     <% end %>
     <a class="close-reveal-modal">&#215;</a>
+	<script>
+	$(function(){		
+		$('#new_education_claim').motionCaptcha({
+			    errorMsg: 'Пожалуйста, попробуйте снова.',
+			    successMsg: 'Верно!',
+				shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
+		);
+	})
+	</script>
 </div>
 
-<script>
-$(function(){		
-	$('#new_education_claim').motionCaptcha({
-		    errorMsg: 'Пожалуйста, попробуйте снова.',
-		    successMsg: 'Верно!',
-			shapes: ['triangle', 'x', 'rectangle', 'circle', 'check', 'zigzag', 'arrow', 'delete', 'pigtail', 'star']
-		});
-})
-</script>
