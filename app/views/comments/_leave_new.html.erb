@@ -6,8 +6,27 @@
       <div class="raty-div"></div>
       <%= f.label :text, 'Ваш отзыв' %>
       <%= f.text_area :text, rows: 4, required: true %>
+	  
+	  <%= hidden_field_tag 'mc-action-3', request.original_url %>
+	  
+  	<div id="mc-3">
+  	    <p>Чтобы отправить заявку, повторите рисунок:</p>
+  	    <canvas id="mc-canvas-3"></canvas>
+  	</div>
+	  
+  	<script type="text/javascript"ß>
+  	$(function(){	
+  		$('#leaveComment .new_comment').motionCaptcha({
+  				action: '#mc-action-3',        // the ID of the input containing the form action
+      			divId: '#mc-3',                // if you use an ID other than '#mc' for the placeholder, pass it in here
+      			canvasId: '#mc-canvas-3',      // the ID of the MotionCAPTCHA canvas element
+  			    errorMsg: 'Попробуйте снова.',
+  			    successMsg: 'Верно!'
+  		});
+  	})
+  	</script>
       <br>
-      <%= f.submit 'Оставить отзыв', class: 'button' %>
+      <%= f.submit 'Оставить отзыв', class: 'button', disabled: true %>
   <% end %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
