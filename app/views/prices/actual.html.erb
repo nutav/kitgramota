@@ -1,3 +1,4 @@
+<% content_for :title, 'Цены' %>
 <h1>Цены</h1>
 <% Education::Level.all.order(:id).each do |level| %>
 <h2><%= level.name %></h2>

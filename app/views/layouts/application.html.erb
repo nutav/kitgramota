@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @title ? @title : 'Китайская грамота' %></title>
+  <%= favicon_link_tag %>
+  <title><%=content_for?(:title) ? yield(:title) : 'Китайская грамота' %></title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <%= javascript_include_tag 'application' %>
