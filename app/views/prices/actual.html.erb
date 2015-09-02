@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% level.prices.no_individual.order(:saturday).each do |price| %>
+    <% level.prices.no_individual.order(:saturday, :id).each do |price| %>
       <tr>
         <td><%= price.type.name %> <%= '(включая занятие в субботу <a href="#saturdays">*</a>)'.html_safe if price.saturday? %></td>
         <td><%= price.sum %> руб.</td>
