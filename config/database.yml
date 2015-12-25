@@ -44,8 +44,8 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: kitgramota_production
+  database: kit-gramota.ru
   pool: 5
-  username: user
+  username: postgres
   host: localhost
   password: <%= ENV['DATABASE_PASSWORD'] %>
